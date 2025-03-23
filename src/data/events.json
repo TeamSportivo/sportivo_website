@@ -1,0 +1,172 @@
+{
+  "events": [
+    {
+      "id": "cricket",
+      "title": "SHORT HAND CRICKET TOURNAMENT",
+      "date": "April 8-10, 2025",
+      "time": "9:00 AM - 8:00 PM",
+      "location": "FIEM Campus",
+      "description": "Inter-college cricket tournament featuring exciting matches and competitive spirit.",
+      "fullDescription": "Join us for an exhilarating cricket tournament that brings together the best teams from across colleges. The tournament features Short Hand Cricket format matches with knockout stages leading to an exciting final. Teams will compete for the championship trophy and individual awards for outstanding performances.",
+      "image": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=800&q=80",
+      "teams": ["Team A", "Team B", "Team C"],
+      "featured": true,
+      "category": "Sports",
+      "capacity": "30 teams",
+      "organizer": "Cricket Department",
+      "price": "₹1200 per team",
+      "registration": {
+        "open": true,
+        "deadline": "April 6, 2025",
+        "formLink": "https://forms.gle/9Wwc6kdWYXWtzL1E6"
+      }
+    },
+    {
+      "id": "football",
+      "title": "FUTSAL CHAMPIONSHIP",
+      "date": "April 8-10, 2025",
+      "time": "9:00 AM - 9:00 PM",
+      "location": "College Football Field",
+      "description": "Annual football championship with intense matches and skilled players.",
+      "fullDescription": "Rules:\nEvery match will be played in knockout basis\nNumber of players (5+3)\nReferees decision will be final\nCoordinator has the right to modify rules according to necessity\nIf a player /team fails to report on time then the opponent will be given walkover\nModifications in playing format can be done in case of shortage of time and other issues\n\nContacts of Coordinator:\nDEBKIRAN BANERJEE - 9831821669\nARITTRA CHATERJEE - 7602052924\nSHUBHRATA GUHA ROY - 9475267474",
+      "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80",
+      "teams": ["Team X", "Team Y", "Team Z"],
+      "featured": true,
+      "category": "Sports",
+      "capacity": "40 teams",
+      "organizer": "Sports Department",
+      "price": "₹1800 per team",
+      "registration": {
+        "open": true,
+        "deadline": "April 6, 2025",
+        "formLink": "https://forms.gle/eQpHQDi4W2sckK5M7"
+      }
+    },
+    {
+      "id": "handball",
+      "title": "Women's Handball Tournament",
+      "date": "April 8-10, 2025",
+      "time": "9:00 AM - 7:00 PM",
+      "location": "College Indoor Stadium",
+      "description": "Fast-paced handball tournament featuring skilled teams and exciting matches.",
+      "fullDescription": "VIBGYOR WOMEN HANDBALL 2025\n\nRules:\n1. Teams consist of 5 + 2\n2. The Game is played in two 10-minute halves with a break in between.\n3. Players can move the ball by passing, dribbling, or hitting it with any part of the body above the knee, but not with their feet (except for the goalkeeper within the goal area).\n4. Game coordinators have right to change the rules",
+      "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80",
+      "teams": ["Team Alpha", "Team Beta", "Team Gamma"],
+      "featured": false,
+      "category": "Sports",
+      "capacity": "12 teams",
+      "organizer": "Sports Department",
+      "price": "₹300 per team",
+      "registration": {
+        "open": true,
+        "deadline": "April 7, 2025",
+        "formLink": "https://forms.gle/cqaSy6YxDZmhBrTf9"
+      }
+    },
+    {
+      "id": "badminton",
+      "title": "Badminton Championship",
+      "date": "April 8-10, 2025",
+      "time": "9:00 AM - 7:00 PM",
+      "location": "College Badminton Court",
+      "description": "Individual and doubles badminton tournament with various categories.",
+      "fullDescription": "Rules:\n\nMatch Format: Knockout\nQualifiers: Best of 15 points (1 set)\nCoordinator's Decision: Final\nLate Reporting: Walkover awarded to opponent\nRule Modifications: Coordinator reserves the right to modify rules as needed.\nTeam Eligibility: All college teams are welcome. Player authenticity will be verified with college IDs.\nIf a player wants to participate in both singles and doubles, they have to fill out the Google form twice.\nFor registration in doubles, either player can fill out the form on behalf of both participants.",
+      "image": "https://images.unsplash.com/photo-1613918431703-aa508cf7f94e?auto=format&fit=crop&w=800&q=80",
+      "teams": ["Singles", "Doubles"],
+      "featured": false,
+      "category": "Sports",
+      "capacity": "250 players",
+      "organizer": "Sports Department",
+      "price": "₹100 [Singles] - ₹200 [Doubles]",
+      "registration": {
+        "open": true,
+        "deadline": "April 6, 2025",
+        "formLink": "https://forms.gle/MYYspxbSPwZS6HBr5"
+      }
+    },
+    {
+      "id": "table-tennis",
+      "title": "Table Tennis Tournament",
+      "date": "April 8-9, 2025",
+      "time": "10:00 AM - 5:00 PM",
+      "location": "College Table Tennis Hall",
+      "description": "Individual and doubles table tennis competition with multiple categories.",
+      "fullDescription": "Rules and Regulations:\n\nEach match will be played on a knockout basis leading to the qualifiers.\nKnockouts will be played to 11 points (best of 3 matches).\nQualifiers will be played to 21 points (best of 5 matches).\nIf a player/team fails to report to the ground on time, the opponent will be given a walkover.\nPlayers should bring their own rackets. TT balls will be provided by the coordinator.\nIn the Doubles event, matches will be played to 11 points (best of 3 matches), and the qualifiers will be played to 21 points (best of 5 matches).\nMixed doubles are allowed. The registration for mixed doubles will be on spot. (This rule is subjected to change according to the decision of the coordinator).\nIf a player wants to participate in both singles and doubles, they have to fill out the Google form twice.\nFor registration in doubles, either player can fill out the form on behalf of both participants.\nThe coordinator has the right to modify the rules as necessary.\nThe decision of the coordinator will be final.",
+      "image": "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80",
+      "teams": ["Singles", "Doubles"],
+      "featured": false,
+      "category": "Sports",
+      "capacity": "48 players",
+      "organizer": "Sports Department",
+      "price": "₹150 [Singles] - ₹300 [Doubles]",
+      "registration": {
+        "open": true,
+        "deadline": "April 6, 2025",
+        "formLink": "https://forms.gle/AnDDDxj4P2gsMLtY6"
+      }
+    },
+    {
+      "id": "chess-u9",
+      "title": "Chess Tournament (U-9)",
+      "date": "April 9, 2025",
+      "time": "10:00 AM - 4:00 PM",
+      "location": "College Chess Club",
+      "description": "Chess tournament for players under 9 years of age.",
+      "fullDescription": "The U-9 chess tournament is designed to nurture young chess talents. Players will compete in a Swiss system format with multiple rounds. The tournament includes special prizes for different age groups and recognition for outstanding performances.",
+      "image": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=800&q=80",
+      "teams": ["Individual"],
+      "featured": false,
+      "category": "Sports",
+      "capacity": "120 players",
+      "organizer": "Sports Department",
+      "price": "₹550 per player",
+      "registration": {
+        "open": true,
+        "deadline": "April 6, 2025",
+        "formLink": "https://forms.gle/RTJ5MEuRvTdzPzKS7"
+      }
+    },
+    {
+      "id": "chess-open",
+      "title": "Chess Tournament (Open)",
+      "date": "April 10, 2025",
+      "time": "10:00 AM - 6:00 PM",
+      "location": "College Chess Club",
+      "description": "Open chess tournament for all age groups.",
+      "fullDescription": "The open chess tournament welcomes players of all age groups and skill levels. The tournament features a Swiss system format with multiple rounds. Special categories for different rating groups and age categories are included.",
+      "image": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=800&q=80",
+      "teams": ["Individual"],
+      "featured": false,
+      "category": "Sports",
+      "capacity": "250 players",
+      "organizer": "Sports Department",
+      "price": "₹650 per player",
+      "registration": {
+        "open": true,
+        "deadline": "April 6, 2025",
+        "formLink": "https://forms.gle/pS2x3j38LkCoFHPs8"
+      }
+    },
+    {
+      "id": "flash",
+      "title": "Flash Events",
+      "date": "April 8-10, 2025",
+      "time": "1:00 PM - 6:00 PM",
+      "location": "Fiem Placement Cell Ground",
+      "description": "Numerous fun Sports Activities",
+      "fullDescription": "Hit the Wicket, Goal in the Hole, Carrom, Dart, Sequence and many more",
+      "image": "https://images.unsplash.com/photo-1501612780327-6b9c9b3f0b0f?auto=format&fit=crop&w=800&q=80",
+      "teams": ["Sports Team"],
+      "featured": true,
+      "category": "Sports",
+      "capacity": "400 participants",
+      "organizer": "Sports Department",
+      "price": "will be updated soon",
+      "registration": {
+        "open": true,
+        "deadline": "On Spot Registration",
+        "formLink": "https://forms.gle/YDDjChnW5sqoFVg48"
+      }
+    }
+  ]
+} 
