@@ -25,7 +25,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4">
               <a 
-                href="#" 
+                href="https://www.facebook.com/FIEMsportivo/" 
                 className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                 aria-label="Facebook"
               >
@@ -39,7 +39,7 @@ const Footer = () => {
                 <Twitter size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/sportivoteamfuture/?igsh=OWs1N3Bhc3JjN3hi#" 
                 className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                 aria-label="Instagram"
               >
@@ -121,7 +121,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-gray-600">
-                  CCV8+85M, Sonarpur Station Rd, Mission Pally, Narendrapur, Kolkata, West Bengal 70015
+                  Sonarpur Station Rd, Mission Pally, Narendrapur, Kolkata, West Bengal 70015
                 </span>
               </li>
               <li className="flex items-center gap-3">

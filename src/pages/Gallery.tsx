@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, ChevronDown } from 'lucide-react';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { fetchImagesFromFolder } from '@/utils/storageUtils';
 import { toast } from 'sonner';
+import { Button } from '@/components/ui/button';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [images, setImages] = useState<{src: string; alt: string; category: string}[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showAll, setShowAll] = useState(false);
   
   const categories = ['All', 'Chess', 'Badminton', 'Cricket', 'Football', 'Handball', 'Flash events'];
   const [activeCategory, setActiveCategory] = useState('All');
@@ -53,11 +55,14 @@ const Gallery = () => {
     };
     
     loadImages();
+    setShowAll(false); // Reset showAll when category changes
   }, [activeCategory]); // Reload images when category changes
   
   const filteredImages = activeCategory === 'All' 
     ? images 
     : images.filter(img => img.category.toLowerCase() === activeCategory.toLowerCase());
+
+  const displayedImages = showAll ? filteredImages : filteredImages.slice(0, 8);
 
   return (
     <div className="pt-20">
@@ -83,21 +88,49 @@ const Gallery = () => {
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {filteredImages.map((image, index) => (
-                <div 
-                  key={index}
-                  className="aspect-square overflow-hidden rounded-lg cursor-pointer relative group"
-                  onClick={() => setSelectedImage(image.src)}
-                >
-                  <img 
-                    src={image.src} 
-                    alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {displayedImages.map((image, index) => (
+                  <div 
+                    key={index}
+                    className="aspect-square overflow-hidden rounded-lg cursor-pointer relative group"
+                    onClick={() => setSelectedImage(image.src)}
+                  >
+                    <img 
+                      src={image.src} 
+                      alt={image.alt}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {filteredImages.length > 8 && !showAll && (
+                <div className="flex justify-center mt-12">
+                  <Button 
+                    variant="outline" 
+                    className="group"
+                    onClick={() => setShowAll(true)}
+                  >
+                    View All Images
+                    <ChevronDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+                  </Button>
                 </div>
-              ))}
-            </div>
+              )}
+
+              {showAll && filteredImages.length > 8 && (
+                <div className="flex justify-center mt-12">
+                  <Button 
+                    variant="outline" 
+                    className="group"
+                    onClick={() => setShowAll(false)}
+                  >
+                    Show Less
+                    <ChevronDown className="ml-2 h-4 w-4 rotate-180 group-hover:-translate-y-1 transition-transform" />
+                  </Button>
+                </div>
+              )}
+            </>
           )}
           
           {filteredImages.length === 0 && !loading && (

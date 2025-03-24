@@ -42,18 +42,17 @@ const Hero = () => {
           <div className="space-y-8 max-w-xl animate-reveal">
             <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-1 inline-flex items-center space-x-1 animate-reveal-delay-1">
               <span className="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-              <span className="text-xs font-medium tracking-wider text-white">EXCELLENCE IN MOTION</span>
+              <span className="text-xs font-medium tracking-wider text-white">Play Fair. Win with Honor.</span>
             </div>
             
-            <h1 
-              ref={heroTextRef}
-              className="text-4xl md:text-6xl font-bold text-white hero-text leading-tight"
+            <h1
+              className="text-4xl md:text-6xl font-bold text-white "
             >
-              Elevate Your Game With Team Sportivo
+              Welcome to Team Sportivo
             </h1>
             
             <p className="text-lg text-white/90 animate-reveal-delay-2">
-              Join our community of athletes where passion meets precision. 
+              The official sports club of FIEM, Kolkata.
               We nurture talent, forge champions, and create unforgettable sporting experiences.
             </p>
             
@@ -90,19 +89,19 @@ const Hero = () => {
               <div className="absolute -bottom-6 -left-6 glass rounded-xl p-4 shadow-lg animate-slide-up">
                 <div className="flex items-center gap-4">
                   <div className="h-10 w-10 bg-primary rounded-full flex items-center justify-center text-white">
-                    <span className="font-bold">15</span>
+                    <span className="font-bold">09</span>
                   </div>
                   <div>
                     <p className="text-white text-sm font-medium">Years of Excellence</p>
-                    <p className="text-white/70 text-xs">Since 2009</p>
+                    <p className="text-white/70 text-xs">Since 2016</p>
                   </div>
                 </div>
               </div>
               
               <div className="absolute -top-6 -right-6 glass rounded-xl p-4 shadow-lg animate-slide-down">
                 <div className="text-right">
-                  <p className="text-white text-sm font-medium">National Champions</p>
-                  <p className="text-white/70 text-xs">Multiple Teams</p>
+                  <p className="text-white text-sm font-medium">College Champions</p>
+                  <p className="text-white/70 text-xs">Multiple Sports</p>
                 </div>
               </div>
             </div>
@@ -110,7 +109,7 @@ const Hero = () => {
         </div>
         
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <a href="#featured-teams" className="text-white opacity-50 hover:opacity-100 transition-opacity">
+          <a href="/events" className="text-white opacity-50 hover:opacity-100 transition-opacity">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

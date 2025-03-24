@@ -60,9 +60,9 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium mb-1">Our Location</h3>
                       <p className="text-gray-600">
-                        123 Stadium Avenue<br />
-                        Sports District<br />
-                        City, Country
+                        Future Institute of Engineering and Management<br />
+                        Sonarpur Station Road, Mission Pally, Narendrapur,<br />
+                        Kolkata, West Bengal 700150
                       </p>
                     </div>
                   </div>
@@ -74,8 +74,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium mb-1">Phone Number</h3>
                       <p className="text-gray-600">
-                        <a href="tel:+15551234567" className="hover:text-primary transition-colors">
-                          +1 (555) 123-4567
+                        <a href="tel: +91 9836489056" className="hover:text-primary transition-colors">
+                          +91 98364 89056
                         </a>
                       </p>
                     </div>
@@ -88,8 +88,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium mb-1">Email Address</h3>
                       <p className="text-gray-600">
-                        <a href="mailto:info@teamsportivo.com" className="hover:text-primary transition-colors">
-                          info@teamsportivo.com
+                        <a href="mailto:sportivo@teamfuture.in" className="hover:text-primary transition-colors">
+                        sportivo@teamfuture.in
                         </a>
                       </p>
                     </div>
@@ -103,7 +103,7 @@ const Contact = () => {
                       <h3 className="font-medium mb-1">Office Hours</h3>
                       <p className="text-gray-600">
                         Monday - Friday: 9am - 5pm<br />
-                        Saturday: 10am - 2pm<br />
+                        Saturday: 10am - 2pm [On call] <br />
                         Sunday: Closed
                       </p>
                     </div>
@@ -115,7 +115,7 @@ const Contact = () => {
                 <h2 className="text-xl font-bold mb-6">Follow Us</h2>
                 <div className="flex items-center gap-4">
                   <a 
-                    href="#" 
+                    href="https://www.facebook.com/FIEMsportivo/" 
                     className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                     aria-label="Facebook"
                   >
@@ -133,7 +133,7 @@ const Contact = () => {
                     </svg>
                   </a>
                   <a 
-                    href="#" 
+                    href="https://www.instagram.com/sportivoteamfuture/?igsh=OWs1N3Bhc3JjN3hi#" 
                     className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                     aria-label="Instagram"
                   >

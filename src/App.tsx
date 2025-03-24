@@ -25,6 +25,8 @@ import CC from "./pages/teams/CC";
 import WC from "./pages/teams/WC";
 import Mentors from "./pages/teams/Mentors";
 import Volunteers from "./pages/teams/Volunteers";
+import Vibgyor from "./pages/Vibgyor";
+import Xaplotes from "./pages/Xaplotes";
 
 const queryClient = new QueryClient();
 
@@ -40,8 +42,8 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
               {/* Redirect Xaplotes and Vibgyor to Events page with filter */}
-              <Route path="/xaplotes" element={<Navigate to="/events?category=Intra%20College" replace />} />
-              <Route path="/vibgyor" element={<Navigate to="/events?category=Intra%20College" replace />} />
+              <Route path="/xaplotes" element={<Xaplotes/>} />
+              <Route path="/vibgyor" element={<Vibgyor/>} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/events" element={<Events />} />
               <Route path="/events/:id" element={<EventDetails />} />
