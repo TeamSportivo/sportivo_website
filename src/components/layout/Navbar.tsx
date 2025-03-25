@@ -105,6 +105,7 @@ const Navbar = () => {
             to="/" 
             className="flex items-center gap-3 group"
           >
+            <img src="/sportivo.gif" alt="Team Sportivo Logo" className="h-12 w-auto rounded-full object-contain" />
             <span className="font-display text-2xl font-bold text-primary tracking-tight group-hover:text-primary/80 transition-colors">
               Team Sportivo
             </span>
