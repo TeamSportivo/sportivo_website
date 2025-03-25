@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MapPin, Users, User, IndianRupee, CalendarCheck } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import eventsData from '@/data/events.json';
+import { fetchImagesFromFolder } from '@/utils/firebase';
 
 interface Event {
   id: string;
@@ -31,25 +32,45 @@ interface Event {
 
 export default function EventDetails() {
   const { id } = useParams<{ id: string }>();
-  // console.log('id', id)
   const navigate = useNavigate();
   const { toast } = useToast();
   const [event, setEvent] = useState<Event | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const foundEvent = eventsData.events.find(e => e.id === id);
-    if (foundEvent) {
-      setEvent(foundEvent);
-    } else {
-      toast({
-        title: "Event not found",
-        description: "The requested event could not be found.",
-        variant: "destructive",
-      });
-      navigate('/events');
-    }
-    setLoading(false);
+    const fetchEventData = async () => {
+      try {
+        const foundEvent = eventsData.events.find(e => e.id === id);
+        if (foundEvent) {
+          // Fetch images from Firebase
+          const images = await fetchImagesFromFolder('/images/Events');
+          const updatedEvent = {
+            ...foundEvent,
+            image: images[foundEvent.id] || foundEvent.image
+          };
+          setEvent(updatedEvent);
+        } else {
+          toast({
+            title: "Event not found",
+            description: "The requested event could not be found.",
+            variant: "destructive",
+          });
+          navigate('/events');
+        }
+      } catch (error) {
+        console.error('Error fetching event data:', error);
+        const foundEvent = eventsData.events.find(e => e.id === id);
+        if (foundEvent) {
+          setEvent(foundEvent);
+        } else {
+          navigate('/events');
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEventData();
   }, [id, navigate, toast]);
 
   const handleRegister = () => {
@@ -84,6 +105,10 @@ export default function EventDetails() {
             src={event.image}
             alt={event.title}
             className="w-full h-[400px] object-cover rounded-lg shadow-lg"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = 'https://via.placeholder.com/800x400?text=Event+Image';
+            }}
           />
         </div>
 
@@ -103,7 +128,7 @@ export default function EventDetails() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card>
             <CardHeader>
               <CardTitle>Event Details</CardTitle>
@@ -146,32 +171,6 @@ export default function EventDetails() {
             </CardHeader>
             <CardContent>
               <p className="whitespace-pre-line">{event.fullDescription}</p>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Categories</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">{event.category}</Badge>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Teams</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2">
-                {event.teams.map((team, index) => (
-                  <Badge key={index} variant="secondary">{team}</Badge>
-                ))}
-              </div>
             </CardContent>
           </Card>
         </div>

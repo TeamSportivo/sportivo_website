@@ -11,22 +11,22 @@ const Index = () => {
   const stats = [
     { 
       icon: <Trophy className="h-8 w-8 text-primary" />,
-      value: "25+",
+      value: "15+",
       label: "Championships Won"
     },
     { 
       icon: <Users className="h-8 w-8 text-primary" />,
-      value: "500+",
+      value: "100+",
       label: "Active Members"
     },
     { 
       icon: <Calendar className="h-8 w-8 text-primary" />,
-      value: "120+",
-      label: "Events Per Year"
+      value: "25+",
+      label: "Events"
     },
     { 
       icon: <Award className="h-8 w-8 text-primary" />,
-      value: "15+",
+      value: "9+",
       label: "Years of Excellence"
     }
   ];

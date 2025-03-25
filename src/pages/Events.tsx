@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MapPin, Users, IndianRupee } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import eventsData from '@/data/events.json';
+import { fetchImagesFromFolder } from '@/utils/firebase';
 
 interface Event {
   id: string;
@@ -34,6 +35,28 @@ export default function Events() {
   const { toast } = useToast();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [events, setEvents] = useState<Event[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchEventImages = async () => {
+      try {
+        const images = await fetchImagesFromFolder('/images/Events');
+        const updatedEvents = eventsData.events.map(event => ({
+          ...event,
+          image: images[event.id] || event.image // Fallback to original image if not found in Firebase
+        }));
+        setEvents(updatedEvents);
+      } catch (error) {
+        console.error('Error fetching event images:', error);
+        setEvents(eventsData.events); // Fallback to original events data
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEventImages();
+  }, []);
 
   const handleRegister = (event: Event) => {
     if (event.registration.open && event.registration.formLink) {
@@ -47,14 +70,22 @@ export default function Events() {
     }
   };
 
-  const filteredEvents = eventsData.events.filter(event => {
+  const filteredEvents = events.filter(event => {
     const matchesSearch = event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       event.description.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = !selectedCategory || event.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
-  const categories = Array.from(new Set(eventsData.events.map(event => event.category)));
+  const categories = Array.from(new Set(events.map(event => event.category)));
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -91,6 +122,10 @@ export default function Events() {
                   src={event.image}
                   alt={event.title}
                   className="w-full h-full object-cover rounded-t-lg"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = 'https://via.placeholder.com/800x400?text=Event+Image';
+                  }}
                 />
                 {event.featured && (
                   <Badge className="absolute top-2 right-2">Featured</Badge>
@@ -123,7 +158,7 @@ export default function Events() {
                   </div>
                 </div>
                 <p className="text-sm text-gray-600 mb-4">{event.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex justify-between items-center mb-4">
                   <Badge variant="secondary">{event.category}</Badge>
                 </div>
                 <div className="flex gap-2">

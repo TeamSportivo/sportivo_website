@@ -73,10 +73,10 @@ const Navbar = () => {
   const navLinks: NavLink[] = [
     { name: 'Home', path: '/', icon: Home },
     { name: 'About Us', path: '/about', icon: Users },
-    { name: 'Teams', path: '#', dropdown: true, items: [
-      { name: 'CC', path: '/teams/cc' },
-      { name: 'WC', path: '/teams/wc' },
+    { name: 'Our Committee', path: '#', dropdown: true, items: [
       { name: 'Mentors', path: '/teams/mentors' },
+      { name: 'Core Committee', path: '/teams/cc' },
+      { name: 'Working Committee', path: '/teams/wc' },
       { name: 'Volunteers', path: '/teams/volunteers' },
     ]},
     { name: 'Fests', path: '#', dropdown: true, items: [
