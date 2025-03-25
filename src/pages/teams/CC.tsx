@@ -42,9 +42,10 @@ const CC = () => {
           { name: "Aman Agastya", imageSrc: sortedImages[12]?.src || `https://randomuser.me/api/portraits/men/53.jpg` },
           { name: "Pratyush Kumar Jha", imageSrc: sortedImages[13]?.src || `https://randomuser.me/api/portraits/men/54.jpg` },
           { name: "Aniruddha Dey", imageSrc: sortedImages[14]?.src || `https://randomuser.me/api/portraits/men/55.jpg` },
-          { name: "Chhavinav Verma", imageSrc: sortedImages[15]?.src || `https://randomuser.me/api/portraits/men/56.jpg` },
-          { name: "Sneha Kataruka", imageSrc: sortedImages[16]?.src || `https://randomuser.me/api/portraits/men/57.jpg` },
-          { name: "Anwesha Nath", imageSrc: sortedImages[17]?.src || `https://randomuser.me/api/portraits/men/58.jpg` }
+          { name: "Kallan Chowdhury", imageSrc: sortedImages[15]?.src || `https://randomuser.me/api/portraits/men/56.jpg` },
+          { name: "Chhavinav Verma", imageSrc: sortedImages[16]?.src || `https://randomuser.me/api/portraits/men/57.jpg` },
+          { name: "Sneha Kataruka", imageSrc: sortedImages[17]?.src || `https://randomuser.me/api/portraits/men/58.jpg` },
+          { name: "Anwesha Nath", imageSrc: sortedImages[18]?.src || `https://randomuser.me/api/portraits/men/59.jpg` }
         ];
         
         setTeamMembers(membersList);
@@ -69,9 +70,10 @@ const CC = () => {
           { name: "Saibesh Dutta", imageSrc: `https://randomuser.me/api/portraits/men/53.jpg` },
           { name: "Rohit Chattopadhyay", imageSrc: `https://randomuser.me/api/portraits/men/54.jpg` },
           { name: "Agniswar Banerjee", imageSrc: `https://randomuser.me/api/portraits/men/55.jpg` },
-          { name: "Akash Hazra", imageSrc: `https://randomuser.me/api/portraits/men/56.jpg` },
-          { name: "Shreyan Dey", imageSrc: `https://randomuser.me/api/portraits/men/57.jpg` },
-          { name: "Utsav Roy", imageSrc: `https://randomuser.me/api/portraits/men/58.jpg` }
+          { name: "Kallan Chowdhury", imageSrc: `https://randomuser.me/api/portraits/men/56.jpg` },
+          { name: "Akash Hazra", imageSrc: `https://randomuser.me/api/portraits/men/57.jpg` },
+          { name: "Shreyan Dey", imageSrc: `https://randomuser.me/api/portraits/men/58.jpg` },
+          { name: "Utsav Roy", imageSrc: `https://randomuser.me/api/portraits/men/59.jpg` }
         ];
         
         setTeamMembers(fallbackMembers);
