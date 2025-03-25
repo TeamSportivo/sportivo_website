@@ -100,7 +100,7 @@ const Navbar = () => {
             : "bg-white/95 backdrop-blur-md"
         )}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <div className="max-w-full mx-auto flex items-center justify-between px-6 py-4">
           <Link 
             to="/" 
             className="flex items-center gap-3 group"

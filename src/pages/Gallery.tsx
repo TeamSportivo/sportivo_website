@@ -66,21 +66,33 @@ const Gallery = () => {
 
   return (
     <div className="pt-20">
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">Our Gallery</h1>
-          <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12">
+      <section className="py-8 md:py-16 bg-gray-50">
+        <div className="container mx-auto px-2 sm:px-4 md:px-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-center mb-4 md:mb-8">Our Gallery</h1>
+          <p className="text-base md:text-lg text-gray-600 text-center max-w-2xl mx-auto mb-8 md:mb-12">
             Capturing the moments of dedication, triumph, and teamwork that define Team Sportivo.
           </p>
           
-          <div className="flex justify-center mb-12">
-            <ToggleGroup type="single" value={activeCategory} onValueChange={(value) => value && setActiveCategory(value)}>
-              {categories.map((category) => (
-                <ToggleGroupItem key={category} value={category} variant="outline" className="px-4 py-2 rounded-full">
-                  {category}
-                </ToggleGroupItem>
-              ))}
-            </ToggleGroup>
+          <div className="flex justify-center mb-8 md:mb-12">
+            <div className="w-full overflow-x-auto pb-4 -mx-2 sm:-mx-4 px-2 sm:px-4">
+              <ToggleGroup 
+                type="single" 
+                value={activeCategory} 
+                onValueChange={(value) => value && setActiveCategory(value)}
+                className="flex flex-nowrap justify-start md:justify-center gap-2 min-w-max"
+              >
+                {categories.map((category) => (
+                  <ToggleGroupItem 
+                    key={category} 
+                    value={category} 
+                    variant="outline" 
+                    className="px-3 md:px-4 py-2 rounded-full whitespace-nowrap text-sm md:text-base"
+                  >
+                    {category}
+                  </ToggleGroupItem>
+                ))}
+              </ToggleGroup>
+            </div>
           </div>
           
           {loading ? (
@@ -89,7 +101,7 @@ const Gallery = () => {
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6">
                 {displayedImages.map((image, index) => (
                   <div 
                     key={index}
@@ -100,16 +112,17 @@ const Gallery = () => {
                       src={image.src} 
                       alt={image.alt}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
                     />
                   </div>
                 ))}
               </div>
 
               {filteredImages.length > 8 && !showAll && (
-                <div className="flex justify-center mt-12">
+                <div className="flex justify-center mt-8 md:mt-12">
                   <Button 
                     variant="outline" 
-                    className="group"
+                    className="group text-sm md:text-base"
                     onClick={() => setShowAll(true)}
                   >
                     View All Images
@@ -119,10 +132,10 @@ const Gallery = () => {
               )}
 
               {showAll && filteredImages.length > 8 && (
-                <div className="flex justify-center mt-12">
+                <div className="flex justify-center mt-8 md:mt-12">
                   <Button 
                     variant="outline" 
-                    className="group"
+                    className="group text-sm md:text-base"
                     onClick={() => setShowAll(false)}
                   >
                     Show Less
@@ -134,8 +147,8 @@ const Gallery = () => {
           )}
           
           {filteredImages.length === 0 && !loading && (
-            <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">No images found for this category.</p>
+            <div className="text-center py-8 md:py-12">
+              <p className="text-gray-500 text-base md:text-lg">No images found for this category.</p>
             </div>
           )}
         </div>
@@ -143,20 +156,20 @@ const Gallery = () => {
       
       {/* Lightbox */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setSelectedImage(null)}>
           <button 
-            className="absolute top-6 right-6 text-white hover:text-gray-300 focus:outline-none"
+            className="absolute top-2 right-2 sm:top-4 sm:right-4 md:top-6 md:right-6 text-white hover:text-gray-300 focus:outline-none"
             onClick={(e) => {
               e.stopPropagation();
               setSelectedImage(null);
             }}
           >
-            <X size={32} />
+            <X size={24} className="md:w-8 md:h-8" />
           </button>
           <img 
             src={selectedImage} 
             alt="Enlarged view"
-            className="max-h-[90vh] max-w-[90vw] object-contain"
+            className="max-h-[85vh] max-w-[95vw] md:max-w-[90vw] object-contain"
           />
         </div>
       )}
