@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { fetchImagesFromFolder } from '@/utils/storageUtils';
 import { toast } from 'sonner';
@@ -6,8 +5,7 @@ import { toast } from 'sonner';
 interface Mentor {
   imageSrc: string;
   name: string;
-  specialization: string;
-  description: string;
+  position: string;
 }
 
 const Mentors = () => {
@@ -19,27 +17,68 @@ const Mentors = () => {
       setLoading(true);
       try {
         // Fetch images from the teams/mentors folder in Firebase Storage
-        const fetchedImages = await fetchImagesFromFolder('teams/mentors');
+        const fetchedImages = await fetchImagesFromFolder('images/teams/Mentor');
         
-        // Map the images to mentors with default data
-        const mentorsList: Mentor[] = fetchedImages.map((img, index) => ({
-          imageSrc: img.src,
-          name: img.alt || `Dr. Mentor ${index + 1}`,
-          specialization: "Sports Management",
-          description: "Over 15 years of experience in sports management and coaching elite athletes."
+        // Map the images to mentors with placeholder data
+        const mentorsList: Mentor[] = [
+          { name: "Satwik Dey", position: "Vice President" },
+          { name: "Debarati Bose", position: "Vice President" },
+          { name: "Tuhin Subhra Nath", position: "Sports Head" },
+          { name: "Akash Halder", position: "Cricket Head" },
+          { name: "Moulik Mitra", position: "Cricket Head" },
+          { name: "Souvik Das", position: "Football Head" },
+          { name: "Debkiran Banerjee", position: "Football Head" },
+          { name: "Arittra Chatterjee", position: "Football Head" },
+          { name: "Dipro Chowdhury", position: "Football Head" },
+          { name: "Kaustav Bhattacharjee", position: "Marketing Head" },
+          { name: "Anwesha Neogi", position: "Marketing Head" },
+          { name: "Shreya Bhattacharya", position: "Chess Head" },
+          { name: "Saibesh Dutta", position: "Badminton Head" },
+          { name: "Rohit Chattopadhyay", position: "Chess Head" },
+          { name: "Agniswar Banerjee", position: "Table Tennis Head" },
+          { name: "Akash Hazra", position: "Graphics Head" },
+          { name: "Shreyan Dey", position: "Graphics Head" },
+          { name: "Utsav Roy", position: "Photography Head" },
+          { name: "Pabitra Ray", position: "Graphics Head" },
+          { name: "Ankita Mondal", position: "Marketing Head" }
+        ].map((mentor, index) => ({
+          ...mentor,
+          imageSrc: fetchedImages[index]?.src || `https://randomuser.me/api/portraits/${index % 2 === 0 ? 'men' : 'women'}/${41 + index}.jpg`
         }));
         
         setMentors(mentorsList);
       } catch (error) {
         console.error("Failed to load mentor images:", error);
-        toast.error("Failed to load mentor data. Please try again later.");
-        // Set some fallback data
-        setMentors([1, 2, 3, 4].map(item => ({
-          imageSrc: `https://randomuser.me/api/portraits/${item % 2 === 0 ? 'women' : 'men'}/${item + 40}.jpg`,
-          name: `Dr. Mentor ${item}`,
-          specialization: "Sports Management",
-          description: "Over 15 years of experience in sports management and coaching elite athletes."
-        })));
+        toast.error("Failed to load mentor images. Using placeholder images.");
+        
+        // Fallback to placeholder images
+        const fallbackMentors = [
+          { name: "Kaustav Bhattacharjee", position: "Marketing Head" },
+          { name: "Dr. Sarah Wilson", position: "Sports Director" },
+          { name: "Prof. Michael Chen", position: "Technical Advisor" },
+          { name: "Dr. Emily Brown", position: "Sports Psychology" },
+          { name: "Dr. James Anderson", position: "Physical Training" },
+          { name: "Dr. Maria Rodriguez", position: "Nutrition Expert" },
+          { name: "Prof. David Kim", position: "Performance Coach" },
+          { name: "Dr. Lisa Thompson", position: "Sports Medicine" },
+          { name: "Dr. Robert Taylor", position: "Athletic Director" },
+          { name: "Dr. Anna Martinez", position: "Team Coordinator" },
+          { name: "Prof. Thomas Clark", position: "Strategy Advisor" },
+          { name: "Dr. Rachel Patel", position: "Fitness Specialist" },
+          { name: "Dr. William Lee", position: "Sports Therapist" },
+          { name: "Prof. Jessica White", position: "Training Coordinator" },
+          { name: "Dr. Daniel Garcia", position: "Wellness Coach" },
+          { name: "Dr. Sophie Turner", position: "Mental Health Specialist" },
+          { name: "Prof. Andrew Wilson", position: "Sports Analytics" },
+          { name: "Dr. Michelle Park", position: "Recovery Specialist" },
+          { name: "Dr. Nemo", position: "Recovery Specialist" },
+          { name: "Dr. Christopher Lee", position: "Team Physician" }
+        ].map((mentor, index) => ({
+          ...mentor,
+          imageSrc: `https://randomuser.me/api/portraits/${index % 2 === 0 ? 'men' : 'women'}/${41 + index}.jpg`
+        }));
+        
+        setMentors(fallbackMentors);
       } finally {
         setLoading(false);
       }
@@ -53,49 +92,39 @@ const Mentors = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 mb-2">
-              <span className="text-xs font-medium text-green-500">GUIDANCE</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
               Our Mentors
             </h1>
             <p className="text-lg text-gray-600">
-              Meet the experienced professionals who guide and inspire our team with their expertise and wisdom.
+              Meet our experienced mentors who guide and inspire our team with their expertise and dedication.
             </p>
           </div>
           
           {loading ? (
             <div className="flex justify-center items-center h-64">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {mentors.map((mentor, index) => (
-                <div key={index} className="flex bg-white p-6 rounded-xl shadow-sm hover-scale">
-                  <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 mr-6">
+                <div 
+                  key={index} 
+                  className="flex flex-col items-center group"
+                >
+                  <div className="relative w-32 h-32 md:w-40 md:h-40 mb-4 rounded-full overflow-hidden bg-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <img 
                       src={mentor.imageSrc}
                       alt={mentor.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-1">{mentor.name}</h3>
-                    <p className="text-green-500 font-medium mb-3">{mentor.specialization}</p>
-                    <p className="text-gray-600 mb-3">{mentor.description}</p>
-                    <div className="flex gap-3">
-                      <a href="#" className="text-primary hover:text-primary/80">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"/>
-                        </svg>
-                      </a>
-                      <a href="#" className="text-blue-600 hover:text-blue-700">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76h-.03c-1.22 0-2-.83-2-1.87 0-1.06.8-1.87 2.05-1.87 1.24 0 2 .8 2.02 1.87 0 1.04-.78 1.87-2.05 1.87zM20.34 20.1h-3.63v-5.8c0-1.45-.52-2.45-1.83-2.45-1 0-1.6.67-1.87 1.32-.1.23-.11.55-.11.88v6.05H9.28s.05-9.82 0-10.84h3.63v1.54a3.6 3.6 0 0 1 3.26-1.8c2.39 0 4.18 1.56 4.18 4.89v6.21z"/>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
+                  <h3 className="text-lg font-semibold text-gray-800 text-center group-hover:text-primary transition-colors duration-200">
+                    {mentor.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 text-center">
+                    {mentor.position}
+                  </p>
                 </div>
               ))}
             </div>

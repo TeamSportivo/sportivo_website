@@ -1,14 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
-import CustomButton from '@/components/ui/CustomButton';
 import { fetchImagesFromFolder } from '@/utils/storageUtils';
 import { toast } from 'sonner';
 
 interface TeamMember {
   imageSrc: string;
   name: string;
-  role: string;
-  description: string;
 }
 
 const CC = () => {
@@ -20,27 +16,65 @@ const CC = () => {
       setLoading(true);
       try {
         // Fetch images from the teams/cc folder in Firebase Storage
-        const fetchedImages = await fetchImagesFromFolder('teams/cc');
+        const fetchedImages = await fetchImagesFromFolder('images/teams/CC');
         
-        // Map the images to team members with default data
-        const members: TeamMember[] = fetchedImages.map((img, index) => ({
-          imageSrc: img.src,
-          name: img.alt || `Team Member ${index + 1}`,
-          role: "Leadership Role",
-          description: "Passionate team leader with expertise in sports management and event coordination."
-        }));
+        // Sort the fetched images by their numeric names
+        const sortedImages = fetchedImages.sort((a, b) => {
+          const numA = parseInt(a.alt.split('.')[0]);
+          const numB = parseInt(b.alt.split('.')[0]);
+          return numA - numB;
+        });
         
-        setTeamMembers(members);
+        // Map the sorted images to team members with actual names
+        const membersList: TeamMember[] = [
+          { name: "Annesha Kunda", imageSrc: sortedImages[0]?.src || `https://randomuser.me/api/portraits/men/41.jpg` },
+          { name: "Subhadeep Gorain", imageSrc: sortedImages[1]?.src || `https://randomuser.me/api/portraits/women/42.jpg` },
+          { name: "Pramit Nandy", imageSrc: sortedImages[2]?.src || `https://randomuser.me/api/portraits/men/43.jpg` },
+          { name: "Snehasish Karmakar", imageSrc: sortedImages[3]?.src || `https://randomuser.me/api/portraits/men/44.jpg` },
+          { name: "Sahitya Majumdar", imageSrc: sortedImages[4]?.src || `https://randomuser.me/api/portraits/men/45.jpg` },
+          { name: "Arunava Pradhan", imageSrc: sortedImages[5]?.src || `https://randomuser.me/api/portraits/men/46.jpg` },
+          { name: "Rohit Yadav", imageSrc: sortedImages[6]?.src || `https://randomuser.me/api/portraits/men/47.jpg` },
+          { name: "Suprova Samanta", imageSrc: sortedImages[7]?.src || `https://randomuser.me/api/portraits/men/48.jpg` },
+          { name: "Subhajit Naskar", imageSrc: sortedImages[8]?.src || `https://randomuser.me/api/portraits/men/49.jpg` },
+          { name: "Priyanka Ghosh", imageSrc: sortedImages[9]?.src || `https://randomuser.me/api/portraits/men/50.jpg` },
+          { name: "Himanish Das", imageSrc: sortedImages[10]?.src || `https://randomuser.me/api/portraits/women/51.jpg` },
+          { name: "Md. Shadan Hossain", imageSrc: sortedImages[11]?.src || `https://randomuser.me/api/portraits/women/52.jpg` },
+          { name: "Aman Agastya", imageSrc: sortedImages[12]?.src || `https://randomuser.me/api/portraits/men/53.jpg` },
+          { name: "Pratyush Kumar Jha", imageSrc: sortedImages[13]?.src || `https://randomuser.me/api/portraits/men/54.jpg` },
+          { name: "Aniruddha Dey", imageSrc: sortedImages[14]?.src || `https://randomuser.me/api/portraits/men/55.jpg` },
+          { name: "Chhavinav Verma", imageSrc: sortedImages[15]?.src || `https://randomuser.me/api/portraits/men/56.jpg` },
+          { name: "Sneha Kataruka", imageSrc: sortedImages[16]?.src || `https://randomuser.me/api/portraits/men/57.jpg` },
+          { name: "Anwesha Nath", imageSrc: sortedImages[17]?.src || `https://randomuser.me/api/portraits/men/58.jpg` }
+        ];
+        
+        setTeamMembers(membersList);
       } catch (error) {
         console.error("Failed to load team images:", error);
-        toast.error("Failed to load team data. Please try again later.");
-        // Set some fallback data
-        setTeamMembers([1, 2, 3, 4].map(item => ({
-          imageSrc: `https://randomuser.me/api/portraits/${item % 2 === 0 ? 'women' : 'men'}/${item + 10}.jpg`,
-          name: `Team Member ${item}`,
-          role: "Leadership Role",
-          description: "Passionate team leader with expertise in sports management and event coordination."
-        })));
+        toast.error("Failed to load team images. Using placeholder images.");
+        
+        // Fallback to placeholder images with actual names
+        const fallbackMembers = [
+          { name: "Satwik Dey", imageSrc: `https://randomuser.me/api/portraits/men/41.jpg` },
+          { name: "Debarati Bose", imageSrc: `https://randomuser.me/api/portraits/women/42.jpg` },
+          { name: "Tuhin Subhra Nath", imageSrc: `https://randomuser.me/api/portraits/men/43.jpg` },
+          { name: "Akash Halder", imageSrc: `https://randomuser.me/api/portraits/men/44.jpg` },
+          { name: "Moulik Mitra", imageSrc: `https://randomuser.me/api/portraits/men/45.jpg` },
+          { name: "Souvik Das", imageSrc: `https://randomuser.me/api/portraits/men/46.jpg` },
+          { name: "Debkiran Banerjee", imageSrc: `https://randomuser.me/api/portraits/men/47.jpg` },
+          { name: "Arittra Chatterjee", imageSrc: `https://randomuser.me/api/portraits/men/48.jpg` },
+          { name: "Dipro Chowdhury", imageSrc: `https://randomuser.me/api/portraits/men/49.jpg` },
+          { name: "Kaustav Bhattacharjee", imageSrc: `https://randomuser.me/api/portraits/men/50.jpg` },
+          { name: "Anwesha Neogi", imageSrc: `https://randomuser.me/api/portraits/women/51.jpg` },
+          { name: "Shreya Bhattacharya", imageSrc: `https://randomuser.me/api/portraits/women/52.jpg` },
+          { name: "Saibesh Dutta", imageSrc: `https://randomuser.me/api/portraits/men/53.jpg` },
+          { name: "Rohit Chattopadhyay", imageSrc: `https://randomuser.me/api/portraits/men/54.jpg` },
+          { name: "Agniswar Banerjee", imageSrc: `https://randomuser.me/api/portraits/men/55.jpg` },
+          { name: "Akash Hazra", imageSrc: `https://randomuser.me/api/portraits/men/56.jpg` },
+          { name: "Shreyan Dey", imageSrc: `https://randomuser.me/api/portraits/men/57.jpg` },
+          { name: "Utsav Roy", imageSrc: `https://randomuser.me/api/portraits/men/58.jpg` }
+        ];
+        
+        setTeamMembers(fallbackMembers);
       } finally {
         setLoading(false);
       }
@@ -53,60 +87,37 @@ const CC = () => {
     <div className="pt-20">
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 mb-2">
-                <span className="text-xs font-medium text-primary">TEAM</span>
-              </div>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                Core Committee
-              </h1>
-              <p className="text-lg text-gray-600">
-                The leadership team driving the vision and strategic direction of Team Sportivo.
-              </p>
-              <div className="pt-4">
-                <CustomButton to="/contact">
-                  Join Our Team
-                </CustomButton>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute -top-4 -right-4 w-72 h-72 bg-primary/10 rounded-full -z-10" />
-              <div className="relative overflow-hidden rounded-xl shadow-xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" 
-                  alt="Core Committee team"
-                  className="w-full hover-scale"
-                />
-              </div>
-            </div>
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
+              Core Committee
+            </h1>
+            <p className="text-lg text-gray-600">
+              Meet our dedicated core committee members who work tirelessly to bring excellence to Team Sportivo.
+            </p>
           </div>
-        </div>
-      </section>
-      
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">Our Leadership</h2>
           
           {loading ? (
             <div className="flex justify-center items-center h-64">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
             </div>
           ) : (
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {teamMembers.map((member, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-xl text-center hover-scale">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4">
+                <div 
+                  key={index} 
+                  className="flex flex-col items-center group"
+                >
+                  <div className="relative w-32 h-32 md:w-40 md:h-40 mb-4 rounded-full overflow-hidden bg-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <img 
                       src={member.imageSrc}
                       alt={member.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-primary font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-600">{member.description}</p>
+                  <h3 className="text-lg font-semibold text-gray-800 text-center group-hover:text-primary transition-colors duration-200">
+                    {member.name}
+                  </h3>
                 </div>
               ))}
             </div>

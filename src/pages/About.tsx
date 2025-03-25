@@ -1,9 +1,76 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Tablet, Trophy, Zap, Star, Clock, Users, Target, Award } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { fetchImagesFromFolder } from '@/utils/storageUtils';
+import { toast } from 'sonner';
+
+interface Leader {
+  imageSrc: string;
+  name: string;
+  position: string;
+}
 
 const About = () => {
+  const [leaders, setLeaders] = useState<Leader[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadLeaderImages = async () => {
+      setLoading(true);
+      try {
+        // Fetch images from the teams/leader folder in Firebase Storage
+        const fetchedImages = await fetchImagesFromFolder('images/teams/leader');
+        
+        // Sort the fetched images by their numeric names
+        const sortedImages = fetchedImages.sort((a, b) => {
+          const numA = parseInt(a.alt.split('.')[0]);
+          const numB = parseInt(b.alt.split('.')[0]);
+          return numA - numB;
+        });
+        
+        // Map the sorted images to leaders with their details
+        const leadersList: Leader[] = [
+          { 
+            name: "Mr. Ratul Kayal",
+            position: "Head Mentor",
+            imageSrc: sortedImages[0]?.src || `https://randomuser.me/api/portraits/men/41.jpg`
+          },
+          { 
+            name: "Mr. Niladri Banerjee",
+            position: "President",
+            imageSrc: sortedImages[1]?.src || `https://randomuser.me/api/portraits/men/42.jpg`
+          }
+        ];
+        
+        setLeaders(leadersList);
+      } catch (error) {
+        console.error("Failed to load leader images:", error);
+        toast.error("Failed to load leader images. Using placeholder images.");
+        
+        // Fallback to placeholder images
+        const fallbackLeaders = [
+          { 
+            name: "Mr. Ratul Kayal",
+            position: "Head Mentor",
+            imageSrc: `https://randomuser.me/api/portraits/men/41.jpg`
+          },
+          { 
+            name: "Mr. Niladri Banerjee",
+            position: "President",
+            imageSrc: `https://randomuser.me/api/portraits/men/42.jpg`
+          }
+        ];
+        
+        setLeaders(fallbackLeaders);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    loadLeaderImages();
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 py-16">
@@ -145,30 +212,20 @@ const About = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div className="text-center space-y-4">
-                      <div className="relative inline-block">
-                        <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl"></div>
-                        <img
-                          src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
-                          alt="Head Mentor"
-                          className="w-40 h-40 rounded-full mx-auto mb-4 object-cover relative z-10 border-4 border-white shadow-lg"
-                        />
+                    {leaders.map((leader, index) => (
+                      <div key={index} className="text-center space-y-4">
+                        <div className="relative inline-block">
+                          <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl"></div>
+                          <img
+                            src={leader.imageSrc}
+                            alt={leader.name}
+                            className="w-40 h-40 rounded-full mx-auto mb-4 object-cover relative z-10 border-4 border-white shadow-lg"
+                          />
+                        </div>
+                        <h3 className="text-2xl font-semibold">{leader.name}</h3>
+                        <p className="text-gray-600 text-lg">{leader.position}</p>
                       </div>
-                      <h3 className="text-2xl font-semibold">Mr. Ratul Kayal</h3>
-                      <p className="text-gray-600 text-lg">Head Mentor</p>
-                    </div>
-                    <div className="text-center space-y-4">
-                      <div className="relative inline-block">
-                        <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl"></div>
-                        <img
-                          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
-                          alt="Club President"
-                          className="w-40 h-40 rounded-full mx-auto mb-4 object-cover relative z-10 border-4 border-white shadow-lg"
-                        />
-                      </div>
-                      <h3 className="text-2xl font-semibold">Niladri Banerjee</h3>
-                      <p className="text-gray-600 text-lg">Club President</p>
-                    </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
