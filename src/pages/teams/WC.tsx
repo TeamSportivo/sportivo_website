@@ -29,7 +29,7 @@ const WC = () => {
         const membersList: TeamMember[] = [
           { name: "Sandip Dutta", imageSrc: sortedImages[0]?.src || `https://randomuser.me/api/portraits/men/41.jpg` },
           { name: "Mriganka Chowdhury", imageSrc: sortedImages[1]?.src || `https://randomuser.me/api/portraits/women/42.jpg` },
-          { name: "Mainak Chowdhury", imageSrc: sortedImages[2]?.src || `https://randomuser.me/api/portraits/men/43.jpg` },
+          { name: "Mainak Nandi", imageSrc: sortedImages[2]?.src || `https://randomuser.me/api/portraits/men/43.jpg` },
           { name: "Spandan Saha", imageSrc: sortedImages[3]?.src || `https://randomuser.me/api/portraits/men/44.jpg` },
           { name: "Trishan Chowdhury", imageSrc: sortedImages[4]?.src || `https://randomuser.me/api/portraits/men/45.jpg` },
           { name: "Manisha Choudhury", imageSrc: sortedImages[5]?.src || `https://randomuser.me/api/portraits/men/46.jpg` },
@@ -44,11 +44,11 @@ const WC = () => {
           { name: "Anan Mitra", imageSrc: sortedImages[14]?.src || `https://randomuser.me/api/portraits/men/55.jpg` },
           { name: "Debadrita Kundu", imageSrc: sortedImages[15]?.src || `https://randomuser.me/api/portraits/men/56.jpg` },
           { name: "Tathagata Das", imageSrc: sortedImages[16]?.src || `https://randomuser.me/api/portraits/men/57.jpg` },
-          { name: "Sharmistha Sarkar", imageSrc: sortedImages[17]?.src || `https://randomuser.me/api/portraits/men/58.jpg` },
+          { name: "Sharmistha Ghosh", imageSrc: sortedImages[17]?.src || `https://randomuser.me/api/portraits/men/58.jpg` },
           { name: "Swagatam Sarkar", imageSrc: sortedImages[18]?.src || `https://randomuser.me/api/portraits/men/59.jpg` },
           { name: "Chetan Saha", imageSrc: sortedImages[19]?.src || `https://randomuser.me/api/portraits/women/60.jpg` },
-          { name: "Srijon Nandy", imageSrc: sortedImages[20]?.src || `https://randomuser.me/api/portraits/men/61.jpg` },
-          { name: "Kranti Sadhukhan", imageSrc: sortedImages[21]?.src || `https://randomuser.me/api/portraits/women/62.jpg` }
+          { name: "Kranti Sadhukhan", imageSrc: sortedImages[20]?.src || `https://randomuser.me/api/portraits/men/61.jpg` },
+          { name: "Srijon Nandy", imageSrc: sortedImages[21]?.src || `https://randomuser.me/api/portraits/women/62.jpg` }
         ];
         
         setTeamMembers(membersList);
