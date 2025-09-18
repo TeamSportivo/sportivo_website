@@ -106,36 +106,36 @@ const Volunteers = () => {
               Our Volunteers
             </h1>
             <p className="text-lg text-gray-600">
-              Meet our dedicated volunteers who work tirelessly to bring excellence to Team Sportivo.
+              Coming Soon!!
             </p>
           </div>
           
-          {loading ? (
-            <div className="flex justify-center items-center h-64">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              {teamMembers.map((member, index) => (
-                <div 
-                  key={index} 
-                  className="flex flex-col items-center group"
-                >
-                  <div className="relative w-32 h-32 md:w-40 md:h-40 mb-4 rounded-full overflow-hidden bg-white shadow-lg group-hover:shadow-xl transition-all duration-300">
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <img 
-                      src={member.imageSrc}
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-800 text-center group-hover:text-primary transition-colors duration-200">
-                    {member.name}
-                  </h3>
-                </div>
-              ))}
-            </div>
-          )}
+          {/*{loading ? (*/}
+          {/*  <div className="flex justify-center items-center h-64">*/}
+          {/*    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>*/}
+          {/*  </div>*/}
+          {/*) : (*/}
+          {/*  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">*/}
+          {/*    {teamMembers.map((member, index) => (*/}
+          {/*      <div */}
+          {/*        key={index} */}
+          {/*        className="flex flex-col items-center group"*/}
+          {/*      >*/}
+          {/*        <div className="relative w-32 h-32 md:w-40 md:h-40 mb-4 rounded-full overflow-hidden bg-white shadow-lg group-hover:shadow-xl transition-all duration-300">*/}
+          {/*          <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />*/}
+          {/*          <img */}
+          {/*            src={member.imageSrc}*/}
+          {/*            alt={member.name}*/}
+          {/*            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"*/}
+          {/*          />*/}
+          {/*        </div>*/}
+          {/*        <h3 className="text-lg font-semibold text-gray-800 text-center group-hover:text-primary transition-colors duration-200">*/}
+          {/*          {member.name}*/}
+          {/*        </h3>*/}
+          {/*      </div>*/}
+          {/*    ))}*/}
+          {/*  </div>*/}
+          {/*)}*/}
         </div>
       </section>
     </div>

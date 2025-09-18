@@ -17,34 +17,41 @@ const Mentors = () => {
       setLoading(true);
       try {
         // Fetch images from the teams/mentors folder in Firebase Storage
-        const fetchedImages = await fetchImagesFromFolder('images/teams/Mentor');
-        
+        const fetchedImages = await fetchImagesFromFolder('images/teams/CC');
+
+      // Sort the fetched images by their numeric names
+      const sortedImages = fetchedImages.sort((a, b) => {
+          const numA = parseInt(a.alt.split('.')[0]);
+          const numB = parseInt(b.alt.split('.')[0]);
+          return numA - numB;
+      });
         // Map the images to mentors with placeholder data
         const mentorsList: Mentor[] = [
-          { name: "Satwik Dey", position: "Vice President" },
-          { name: "Debarati Bose", position: "Vice President" },
-          { name: "Tuhin Subhra Nath", position: "Sports Head" },
-          { name: "Akash Halder", position: "Cricket Head" },
-          { name: "Moulik Mitra", position: "Cricket Head" },
-          { name: "Souvik Das", position: "Football Head" },
-          { name: "Debkiran Banerjee", position: "Football Head" },
-          { name: "Arittra Chatterjee", position: "Football Head" },
-          { name: "Dipro Chowdhury", position: "Football Head" },
-          { name: "Kaustav Bhattacharjee", position: "Marketing Head" },
-          { name: "Anwesha Neogi", position: "Marketing Head" },
-          { name: "Shreya Bhattacharya", position: "Chess Head" },
-          { name: "Saibesh Dutta", position: "Badminton Head" },
-          { name: "Rohit Chattopadhyay", position: "Chess Head" },
-          { name: "Agniswar Banerjee", position: "Table Tennis Head" },
-          { name: "Akash Hazra", position: "Graphics Head" },
-          { name: "Shreyan Dey", position: "Graphics Head" },
-          { name: "Utsav Roy", position: "Photography Head" },
-          { name: "Pabitra Ray", position: "Graphics Head" },
-          { name: "Ankita Mondal", position: "Marketing Head" }
-        ].map((mentor, index) => ({
-          ...mentor,
-          imageSrc: fetchedImages[index]?.src || `https://randomuser.me/api/portraits/${index % 2 === 0 ? 'men' : 'women'}/${41 + index}.jpg`
-        }));
+            { name: "Rohit Yadav", imageSrc: sortedImages[6]?.src || `https://randomuser.me/api/portraits/men/47.jpg`, position: "Vice President" },
+            { name: "Chhavinav Verma", imageSrc: sortedImages[16]?.src || `https://randomuser.me/api/portraits/men/57.jpg`, position: "Sports and Table Tennis Head" },
+            { name: "Aman Agastya", imageSrc: sortedImages[12]?.src || `https://randomuser.me/api/portraits/men/53.jpg`, position: "Graphics and PR Head" },
+            { name: "Kallan Chowdhury", imageSrc: sortedImages[15]?.src || `https://randomuser.me/api/portraits/men/56.jpg`, position: "Badminton Head" },
+            { name: "Subhadeep Gorain", imageSrc: sortedImages[1]?.src || `https://randomuser.me/api/portraits/women/42.jpg`, position: "Badminton Head" },
+            { name: "Arunava Pradhan", imageSrc: sortedImages[5]?.src || `https://randomuser.me/api/portraits/men/46.jpg`, position: "Cricket Head" },
+            { name: "Aniruddha Dey", imageSrc: sortedImages[14]?.src || `https://randomuser.me/api/portraits/men/55.jpg`, position: "Cricket Head" },
+            { name: "Subhajit Naskar", imageSrc: sortedImages[8]?.src || `https://randomuser.me/api/portraits/men/49.jpg`, position: "Football Head" },
+            { name: "Snehasish Karmakar", imageSrc: sortedImages[3]?.src || `https://randomuser.me/api/portraits/men/44.jpg`, position: "Football Head" },
+            { name: "Sahitya Majumdar", imageSrc: sortedImages[4]?.src || `https://randomuser.me/api/portraits/men/45.jpg`, position: "Football Head" },
+            { name: "Md. Shadan Hossain", imageSrc: sortedImages[11]?.src || `https://randomuser.me/api/portraits/women/52.jpg`, position: "Football Head" },
+            { name: "Pulak Adhikary", imageSrc: sortedImages[7]?.src || `https://randomuser.me/api/portraits/men/48.jpg`, position: "Chess Head" },
+            { name: "Suprova Samanta", imageSrc: sortedImages[7]?.src || `https://randomuser.me/api/portraits/men/48.jpg`, position: "Chess Head" },
+            { name: "Priyanka Ghosh", imageSrc: sortedImages[9]?.src || `https://randomuser.me/api/portraits/men/50.jpg`, position: "Handball Head" },
+            { name: "Pratyush Kumar Jha", imageSrc: sortedImages[13]?.src || `https://randomuser.me/api/portraits/men/54.jpg`, position: "Marketing Head" },
+            { name: "Anwesha Nath", imageSrc: sortedImages[18]?.src || `https://randomuser.me/api/portraits/men/59.jpg`, position: "Marketing Head" },
+            { name: "Annesha Kunda", imageSrc: sortedImages[0]?.src || `https://randomuser.me/api/portraits/men/41.jpg`, position: "Photography Head" },
+
+            { name: "Pramit Nandy", imageSrc: sortedImages[2]?.src || `https://randomuser.me/api/portraits/men/43.jpg`, position: "Event Head" },
+            { name: "Jayesh Mondal", imageSrc: sortedImages[2]?.src || `https://randomuser.me/api/portraits/men/43.jpg`, position: "Event Head" },
+            { name: "Abhirup Nath", imageSrc: sortedImages[2]?.src || `https://randomuser.me/api/portraits/men/43.jpg`, position: "Event Head" },
+            { name: "Pritam Dolui", imageSrc: sortedImages[2]?.src || `https://randomuser.me/api/portraits/men/43.jpg`, position: "Event Head" },
+            // { name: "Himanish Das", imageSrc: sortedImages[10]?.src || `https://randomuser.me/api/portraits/women/51.jpg`, position: "Marketing Head" },
+            // { name: "Sneha Kataruka", imageSrc: sortedImages[17]?.src || `https://randomuser.me/api/portraits/men/58.jpg`, position: "Photography Head" },
+        ]
         
         setMentors(mentorsList);
       } catch (error) {

@@ -16,7 +16,7 @@ const WC = () => {
       setLoading(true);
       try {
         // Fetch images from the teams/wc folder in Firebase Storage
-        const fetchedImages = await fetchImagesFromFolder('images/teams/WC');
+        const fetchedImages = await fetchImagesFromFolder('images/teams/VC');
         
         // Sort the fetched images by their numeric names
         const sortedImages = fetchedImages.sort((a, b) => {
@@ -27,28 +27,31 @@ const WC = () => {
         
         // Map the sorted images to team members with actual names
         const membersList: TeamMember[] = [
-          { name: "Sandip Dutta", imageSrc: sortedImages[0]?.src || `https://randomuser.me/api/portraits/men/41.jpg` },
-          { name: "Mriganka Chowdhury", imageSrc: sortedImages[1]?.src || `https://randomuser.me/api/portraits/women/42.jpg` },
-          { name: "Mainak Nandi", imageSrc: sortedImages[2]?.src || `https://randomuser.me/api/portraits/men/43.jpg` },
-          { name: "Spandan Saha", imageSrc: sortedImages[3]?.src || `https://randomuser.me/api/portraits/men/44.jpg` },
-          { name: "Trishan Chowdhury", imageSrc: sortedImages[4]?.src || `https://randomuser.me/api/portraits/men/45.jpg` },
-          { name: "Manisha Choudhury", imageSrc: sortedImages[5]?.src || `https://randomuser.me/api/portraits/men/46.jpg` },
-          { name: "Swetam Kumar", imageSrc: sortedImages[6]?.src || `https://randomuser.me/api/portraits/men/47.jpg` },
-          { name: "Megha Bhattacharjee", imageSrc: sortedImages[7]?.src || `https://randomuser.me/api/portraits/men/48.jpg` },
-          { name: "Nigel Savio Benjamin", imageSrc: sortedImages[8]?.src || `https://randomuser.me/api/portraits/men/49.jpg` },
-          { name: "Adrija Dey", imageSrc: sortedImages[9]?.src || `https://randomuser.me/api/portraits/men/50.jpg` },
-          { name: "Suhit Ghosh", imageSrc: sortedImages[10]?.src || `https://randomuser.me/api/portraits/women/51.jpg` },
-          { name: "Rahul Das", imageSrc: sortedImages[11]?.src || `https://randomuser.me/api/portraits/women/52.jpg` },
-          { name: "Arman Khan", imageSrc: sortedImages[12]?.src || `https://randomuser.me/api/portraits/men/53.jpg` },
-          { name: "Diganta Nath", imageSrc: sortedImages[13]?.src || `https://randomuser.me/api/portraits/men/54.jpg` },
-          { name: "Anan Mitra", imageSrc: sortedImages[14]?.src || `https://randomuser.me/api/portraits/men/55.jpg` },
-          { name: "Debadrita Kundu", imageSrc: sortedImages[15]?.src || `https://randomuser.me/api/portraits/men/56.jpg` },
-          { name: "Tathagata Das", imageSrc: sortedImages[16]?.src || `https://randomuser.me/api/portraits/men/57.jpg` },
-          { name: "Sharmistha Ghosh", imageSrc: sortedImages[17]?.src || `https://randomuser.me/api/portraits/men/58.jpg` },
-          { name: "Swagatam Sarkar", imageSrc: sortedImages[18]?.src || `https://randomuser.me/api/portraits/men/59.jpg` },
-          { name: "Chetan Saha", imageSrc: sortedImages[19]?.src || `https://randomuser.me/api/portraits/women/60.jpg` },
-          { name: "Kranti Sadhukhan", imageSrc: sortedImages[20]?.src || `https://randomuser.me/api/portraits/men/61.jpg` },
-          { name: "Srijon Nandy", imageSrc: sortedImages[21]?.src || `https://randomuser.me/api/portraits/women/62.jpg` }
+            { name: "Aahona Bose", imageSrc: sortedImages[0]?.src || `https://randomuser.me/api/portraits/women/41.jpg` },
+            { name: "Soumili Gharami", imageSrc: sortedImages[1]?.src || `https://randomuser.me/api/portraits/women/42.jpg` },
+            { name: "Sreya Ganguly", imageSrc: sortedImages[2]?.src || `https://randomuser.me/api/portraits/women/43.jpg` },
+            { name: "Soumadip Das", imageSrc: sortedImages[3]?.src || `https://randomuser.me/api/portraits/men/44.jpg` },
+            { name: "Aditya Sarkar", imageSrc: sortedImages[4]?.src || `https://randomuser.me/api/portraits/men/45.jpg` },
+            { name: "Swarnadeep Chatterjee", imageSrc: sortedImages[5]?.src || `https://randomuser.me/api/portraits/men/46.jpg` },
+            { name: "Archita Shaw", imageSrc: sortedImages[6]?.src || `https://randomuser.me/api/portraits/women/47.jpg` },
+            { name: "TUHIN KUMAR DUYA", imageSrc: sortedImages[7]?.src || `https://randomuser.me/api/portraits/men/48.jpg` },
+            { name: "SOUMAJIT NASKAR", imageSrc: sortedImages[8]?.src || `https://randomuser.me/api/portraits/men/49.jpg` },
+            { name: "Shuvronil Mallick", imageSrc: sortedImages[9]?.src || `https://randomuser.me/api/portraits/men/50.jpg` },
+            { name: "Sanhita Halder", imageSrc: sortedImages[10]?.src || `https://randomuser.me/api/portraits/women/51.jpg` },
+            { name: "Sneha Biswas", imageSrc: sortedImages[11]?.src || `https://randomuser.me/api/portraits/women/52.jpg` },
+            { name: "Saptarshi Chakraborty", imageSrc: sortedImages[12]?.src || `https://randomuser.me/api/portraits/men/53.jpg` },
+            { name: "Atreyee Roy", imageSrc: sortedImages[13]?.src || `https://randomuser.me/api/portraits/women/54.jpg` },
+            { name: "Nisha Mahajan", imageSrc: sortedImages[14]?.src || `https://randomuser.me/api/portraits/women/55.jpg` },
+            { name: "Ankita Kumari", imageSrc: sortedImages[15]?.src || `https://randomuser.me/api/portraits/women/56.jpg` },
+            { name: "Aayushmita Das", imageSrc: sortedImages[16]?.src || `https://randomuser.me/api/portraits/women/57.jpg` },
+            { name: "Rupsha Chowdhury", imageSrc: sortedImages[17]?.src || `https://randomuser.me/api/portraits/women/58.jpg` },
+            { name: "Debatma Ganguly", imageSrc: sortedImages[18]?.src || `https://randomuser.me/api/portraits/women/59.jpg` },
+            { name: "Abhishek sharma", imageSrc: sortedImages[19]?.src || `https://randomuser.me/api/portraits/men/60.jpg` },
+            { name: "Babita Roy", imageSrc: sortedImages[20]?.src || `https://randomuser.me/api/portraits/women/61.jpg` },
+            { name: "Shreya Das", imageSrc: sortedImages[21]?.src || `https://randomuser.me/api/portraits/women/62.jpg` },
+            { name: "Ranodeep Das", imageSrc: sortedImages[22]?.src || `https://randomuser.me/api/portraits/men/63.jpg` },
+            { name: "SUBHAJIT MONDAL", imageSrc: sortedImages[23]?.src || `https://randomuser.me/api/portraits/men/64.jpg` },
+            { name: "Sourin Bose", imageSrc: sortedImages[24]?.src || `https://randomuser.me/api/portraits/men/65.jpg` }
         ];
         
         setTeamMembers(membersList);
