@@ -71,9 +71,19 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium mb-1">Phone Number</h3>
                       <p className="text-gray-600">
-                        <a href="tel: +91 9836489056" className="hover:text-primary transition-colors">
-                          +91 98364 89056
+                        <a href="tel: +91 9830116661" className="hover:text-primary transition-colors">
+                          +91 98301 16661 [ Rohit Yadav ]
                         </a>
+                      <p className="text-gray-600">
+                          <a href="tel: +91 96935 53439" className="hover:text-primary transition-colors">
+                              +91 96935 53439 [ Aman Agastya ]
+                          </a>
+                      </p>
+                      <p className="text-gray-600">
+                          <a href="tel: +91 74797 03520" className="hover:text-primary transition-colors">
+                              +91 74797 03520 [ Chhavinav Verma ]
+                          </a>
+                      </p>
                       </p>
                     </div>
                   </div>

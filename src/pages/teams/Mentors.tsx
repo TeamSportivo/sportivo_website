@@ -38,7 +38,7 @@ const Mentors = () => {
             { name: "Snehasish Karmakar", imageSrc: sortedImages[3]?.src || `https://randomuser.me/api/portraits/men/44.jpg`, position: "Football Head" },
             { name: "Sahitya Majumdar", imageSrc: sortedImages[4]?.src || `https://randomuser.me/api/portraits/men/45.jpg`, position: "Football Head" },
             { name: "Md. Shadan Hossain", imageSrc: sortedImages[11]?.src || `https://randomuser.me/api/portraits/women/52.jpg`, position: "Football Head" },
-            { name: "Pulak Adhikary", imageSrc: sortedImages[7]?.src || `https://randomuser.me/api/portraits/men/48.jpg`, position: "Chess Head" },
+            { name: "Pulak Adhikary", imageSrc: sortedImages[19]?.src || `https://randomuser.me/api/portraits/men/48.jpg`, position: "Chess Head" },
             { name: "Suprova Samanta", imageSrc: sortedImages[7]?.src || `https://randomuser.me/api/portraits/men/48.jpg`, position: "Chess Head" },
             { name: "Priyanka Ghosh", imageSrc: sortedImages[9]?.src || `https://randomuser.me/api/portraits/men/50.jpg`, position: "Handball Head" },
             { name: "Pratyush Kumar Jha", imageSrc: sortedImages[13]?.src || `https://randomuser.me/api/portraits/men/54.jpg`, position: "Marketing Head" },
