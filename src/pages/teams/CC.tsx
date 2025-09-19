@@ -27,7 +27,6 @@ const CC = () => {
         
         // Map the sorted images to team members with actual names
         const membersList: TeamMember[] = [
-            { name: "Sandip Dutta", imageSrc: sortedImages[0]?.src || `https://randomuser.me/api/portraits/men/41.jpg` },
             { name: "Mriganka Chowdhury", imageSrc: sortedImages[1]?.src || `https://randomuser.me/api/portraits/women/42.jpg` },
             { name: "Mainak Nandi", imageSrc: sortedImages[2]?.src || `https://randomuser.me/api/portraits/men/43.jpg` },
             { name: "Spandan Saha", imageSrc: sortedImages[3]?.src || `https://randomuser.me/api/portraits/men/44.jpg` },

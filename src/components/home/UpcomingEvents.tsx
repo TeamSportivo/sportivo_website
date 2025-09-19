@@ -119,23 +119,26 @@ const UpcomingEvents = () => {
                 <h3 className="text-xl font-bold mb-2">{event.title}</h3>
                 <p className="text-gray-600 mb-4 line-clamp-2">{event.description}</p>
                 
-                <div className="flex flex-wrap gap-3 mb-4 text-sm">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4 text-primary" />
-                    <span className="text-gray-700">{event.date}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-4 w-4 text-primary" />
-                    <span className="text-gray-700">{event.time}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <MapPin className="h-4 w-4 text-primary" />
-                    <span className="text-gray-700">{event.location}</span>
-                  </div>
-                </div>
+                {/*<div className="flex flex-wrap gap-3 mb-4 text-sm">*/}
+                {/*  <div className="flex items-center gap-1">*/}
+                {/*    <Calendar className="h-4 w-4 text-primary" />*/}
+                {/*    <span className="text-gray-700">{event.date}</span>*/}
+                {/*  </div>*/}
+                {/*  <div className="flex items-center gap-1">*/}
+                {/*    <Clock className="h-4 w-4 text-primary" />*/}
+                {/*    <span className="text-gray-700">{event.time}</span>*/}
+                {/*  </div>*/}
+                {/*  <div className="flex items-center gap-1">*/}
+                {/*    <MapPin className="h-4 w-4 text-primary" />*/}
+                {/*    <span className="text-gray-700">{event.location}</span>*/}
+                {/*  </div>*/}
+                {/*</div>*/}
                 
                 <div className="flex justify-between items-center">
-                  <span className="text-lg font-bold text-primary">{event.price}</span>
+                  <span className="text-lg font-bold text-primary">
+                      {/*{event.price}*/}
+                      Coming Soon!
+                  </span>
                   <div className="flex gap-2">
                     {event.registration.open ? (
                       <Button 
