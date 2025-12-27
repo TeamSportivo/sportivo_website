@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Facebook, 
-  Twitter, 
+  X, 
   Instagram, 
   Youtube, 
   MapPin, 
@@ -36,7 +36,7 @@ const Footer = () => {
                 className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                 aria-label="Twitter"
               >
-                <Twitter size={18} />
+                <X size={18} />
               </a>
               <a 
                 href="https://www.instagram.com/sportivoteamfuture/?igsh=OWs1N3Bhc3JjN3hi#" 
@@ -92,7 +92,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-6">Our Teams</h3>
+            <h3 className="text-lg font-semibold mb-6">Our Events</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/xaplotes" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-1">
@@ -121,7 +121,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-gray-600">
-                  Sonarpur Station Rd, Mission Pally, Narendrapur, Kolkata, West Bengal 70015
+                  Sonarpur Station Rd, Mission Pally, Narendrapur, Kolkata, West Bengal 700150
                 </span>
               </li>
               <li className="flex items-center gap-3">
