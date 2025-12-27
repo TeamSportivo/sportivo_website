@@ -165,7 +165,7 @@ const Sponsors = () => {
                   
                   <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
                   <div className="mb-6">
-                    <span className="text-3xl font-bold">${plan.price}</span>
+                    <span className="text-3xl font-bold">₹{plan.price}</span>
                     <span className="text-gray-600">/year</span>
                   </div>
                   
