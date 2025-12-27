@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import CustomButton from '../ui/CustomButton';
@@ -89,7 +88,7 @@ const Hero = () => {
               <div className="absolute -bottom-6 -left-6 glass rounded-xl p-4 shadow-lg animate-slide-up">
                 <div className="flex items-center gap-4">
                   <div className="h-10 w-10 bg-primary rounded-full flex items-center justify-center text-white">
-                    <span className="font-bold">09</span>
+                    <span className="font-bold">10</span>
                   </div>
                   <div>
                     <p className="text-white text-sm font-medium">Years of Excellence</p>
