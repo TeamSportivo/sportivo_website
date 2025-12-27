@@ -25,7 +25,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4">
               <a 
-                href="https://www.facebook.com/FIEMsportivo/" 
+                href="https://www.facebook.com/sportivoteamfuture"
                 className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                 aria-label="Facebook"
               >
@@ -46,7 +46,7 @@ const Footer = () => {
                 <Instagram size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://youtube.com/@sportivoteamfuture?si=vUixMmLHUjxK2Ljl" 
                 className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                 aria-label="Youtube"
               >
@@ -127,9 +127,9 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <div className="text-gray-600 space-y-1">
-                  <p>+91 98301 16661</p>
-                  <p>+91 96935 53439</p>
-                  <p>+91 74797 03520</p>
+                  <p>Rohit Yadav (+91 98301 16661) </p>
+                  <p>Aman Agastya (+91 96935 53439) </p>
+                  <p>Chhavinav Verma (+91 74797 03520) </p>
                 </div>
               </li>
               <li className="flex items-center gap-3">
