@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Facebook, X, Instagram, Youtube } from 'lucide-react';
 import CustomButton from '@/components/ui/CustomButton';
 import { toast } from 'sonner';
 import emailjs from '@emailjs/browser';
@@ -110,7 +110,7 @@ const Contact = () => {
                       <h3 className="font-medium mb-1">Office Hours</h3>
                       <p className="text-gray-600">
                         Monday - Friday: 9am - 5pm<br />
-                        Saturday: 10am - 2pm [On call] <br />
+                        Saturday: 10am - 4pm [On call] <br />
                         Sunday: Closed
                       </p>
                     </div>
@@ -122,7 +122,7 @@ const Contact = () => {
                 <h2 className="text-xl font-bold mb-6">Follow Us</h2>
                 <div className="flex items-center gap-4">
                   <a 
-                    href="https://www.facebook.com/FIEMsportivo/" 
+                    href="https://www.facebook.com/sportivoteamfuture" 
                     className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                     aria-label="Facebook"
                   >
@@ -133,7 +133,7 @@ const Contact = () => {
                     className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                     aria-label="Twitter"
                   >
-                    <Twitter className="h-5 w-5" />
+                    <X className="h-5 w-5" />
                   </a>
                   <a 
                     href="https://www.instagram.com/sportivoteamfuture/?igsh=OWs1N3Bhc3JjN3hi#" 
@@ -143,7 +143,7 @@ const Contact = () => {
                     <Instagram className="h-5 w-5" />
                   </a>
                   <a 
-                    href="#" 
+                    href="https://youtube.com/@sportivoteamfuture?si=vUixMmLHUjxK2Ljl" 
                     className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                     aria-label="Youtube"
                   >
