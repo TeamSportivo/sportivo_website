@@ -1,7 +1,7 @@
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Trophy, Users, Target, Award, Sparkles } from 'lucide-react';
+import { Trophy, Users, Target, Award, Sparkles, Crown, CircleDot } from 'lucide-react';
 import CustomButton from '@/components/ui/CustomButton';
 
 const Xaplotes = () => {
@@ -75,7 +75,7 @@ const Xaplotes = () => {
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow group">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Award className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
+                    <CircleDot className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
                     Xaplotes Cricket
                   </CardTitle>
                 </CardHeader>
@@ -113,6 +113,35 @@ const Xaplotes = () => {
                   </p>
                 </CardContent>
               </Card>
+
+               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow group">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Award className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
+                    Xaplotes Women's Handball
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">
+                    Showcases athletic passion, competitive spirit, and teamwork as teams compete for top honors on the court.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow group">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Crown className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
+                    Xaplotes Grandmaster Arena
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">
+                    Chess is a war over the board, an art, a science, and a sport where every move shapes destiny, testing skill, patience, and strategy in a battle of minds.
+                  </p>
+                </CardContent>
+              </Card>
+              
             </div>
           </div>
         </div>
