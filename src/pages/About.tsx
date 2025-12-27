@@ -162,6 +162,7 @@ const About = () => {
                       <Badge variant="secondary" className="px-4 py-1 text-base">Shuttle Cup</Badge>
                       <Badge variant="secondary" className="px-4 py-1 text-base">Chess</Badge>
                       <Badge variant="secondary" className="px-4 py-1 text-base">Table Tennis</Badge>
+                      <Badge variant="secondary" className="px-4 py-1 text-base">Women's Handball</Badge>
                     </div>
                     <p className="text-gray-700 text-lg">
                       It's a platform for talents to emerge, friendships to solidify, and the college spirit to soar.
