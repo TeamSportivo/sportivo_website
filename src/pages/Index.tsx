@@ -26,7 +26,7 @@ const Index = () => {
     },
     { 
       icon: <Award className="h-8 w-8 text-primary" />,
-      value: "9+",
+      value: "10+",
       label: "Years of Excellence"
     }
   ];
