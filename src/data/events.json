@@ -24,7 +24,7 @@
     {
       "id": "football",
       "title": "FUTSAL CHAMPIONSHIP",
-      "date": "Jan 8-10, 2025",
+      "date": "Jan 8-10, 2026",
       "time": "9:00 AM - 9:00 PM",
       "location": "FIEM Campus",
       "description": "Annual football championship with intense matches and skilled players.",
@@ -45,7 +45,7 @@
     {
       "id": "handball",
       "title": "Women's Handball Tournament",
-      "date": "Jan 8-10, 2025",
+      "date": "Jan 8-10, 2026",
       "time": "9:00 AM - 7:00 PM",
       "location": "FIEM Campus",
       "description": "Fast-paced handball tournament featuring skilled teams and exciting matches.",
@@ -87,7 +87,7 @@
     {
       "id": "chess-open",
       "title": "Chess Tournament (Open)",
-      "date": "Jan 10, 2025",
+      "date": "Jan 10, 2026",
       "time": "10:00 AM - 6:00 PM",
       "location": "FIEM Campus",
       "description": "Open chess tournament for all age groups.",
