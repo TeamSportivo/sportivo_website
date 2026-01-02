@@ -1,12 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, MapPin, Users, User, IndianRupee, CalendarCheck } from "lucide-react";
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  User,
+  IndianRupee,
+  CalendarCheck,
+} from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import eventsData from '@/data/events.json';
-import { fetchImagesFromFolder } from '@/utils/firebase';
+import eventsData from "@/data/events.json";
+import { fetchImagesFromFolder } from "@/utils/firebase";
 
 interface Event {
   id: string;
@@ -40,13 +48,13 @@ export default function EventDetails() {
   useEffect(() => {
     const fetchEventData = async () => {
       try {
-        const foundEvent = eventsData.events.find(e => e.id === id);
+        const foundEvent = eventsData.events.find((e) => e.id === id);
         if (foundEvent) {
           // Fetch images from Firebase
-          const images = await fetchImagesFromFolder('/images/Events');
+          const images = await fetchImagesFromFolder("/images/Events");
           const updatedEvent = {
             ...foundEvent,
-            image: images[foundEvent.id] || foundEvent.image
+            image: images[foundEvent.id] || foundEvent.image,
           };
           setEvent(updatedEvent);
         } else {
@@ -55,15 +63,15 @@ export default function EventDetails() {
             description: "The requested event could not be found.",
             variant: "destructive",
           });
-          navigate('/events');
+          navigate("/events");
         }
       } catch (error) {
-        console.error('Error fetching event data:', error);
-        const foundEvent = eventsData.events.find(e => e.id === id);
+        console.error("Error fetching event data:", error);
+        const foundEvent = eventsData.events.find((e) => e.id === id);
         if (foundEvent) {
           setEvent(foundEvent);
         } else {
-          navigate('/events');
+          navigate("/events");
         }
       } finally {
         setLoading(false);
@@ -75,7 +83,7 @@ export default function EventDetails() {
 
   const handleRegister = () => {
     if (event?.registration.open && event?.registration.formLink) {
-      window.open(event.registration.formLink, '_blank');
+      window.open(event.registration.formLink, "_blank");
     } else {
       toast({
         title: "Registration Closed",
@@ -107,7 +115,8 @@ export default function EventDetails() {
             className="w-full h-[400px] object-cover rounded-lg shadow-lg"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = 'https://via.placeholder.com/800x400?text=Event+Image';
+              target.src =
+                "https://via.placeholder.com/800x400?text=Event+Image";
             }}
           />
         </div>
@@ -116,7 +125,9 @@ export default function EventDetails() {
           <div>
             <h1 className="text-4xl font-bold mb-2">{event.title}</h1>
             {event.featured && (
-              <Badge variant="default" className="mb-4">Featured Event</Badge>
+              <Badge variant="default" className="mb-4">
+                Featured Event
+              </Badge>
             )}
           </div>
           <Button
@@ -124,7 +135,7 @@ export default function EventDetails() {
             disabled={!event.registration.open}
             className="w-full md:w-auto"
           >
-            {event.registration.open ? 'Register Now' : 'Registration Closed'}
+            {event.registration.open ? "Register Now" : "Registration Closed"}
           </Button>
         </div>
 
@@ -136,7 +147,9 @@ export default function EventDetails() {
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-2">
                 <Calendar className="h-5 w-5 text-primary" />
-                <span>{event.date}</span>
+                <span>
+                  {event.registration.open ? event.date : "To Be Announced"}
+                </span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="h-5 w-5 text-primary" />
@@ -160,7 +173,9 @@ export default function EventDetails() {
               </div>
               <div className="flex items-center space-x-2">
                 <CalendarCheck className="h-5 w-5 text-primary" />
-                <span>Registration Deadline: {event.registration.deadline}</span>
+                <span>
+                  Registration Deadline: {event.registration.deadline}
+                </span>
               </div>
             </CardContent>
           </Card>

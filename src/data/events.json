@@ -3,7 +3,7 @@
     {
       "id": "cricket",
       "title": "CRICKET TOURNAMENT",
-      "date": "April 10-11, 2026",
+      "date": "Jan 10-11, 2026",
       "time": "9:00 AM - 5:00 PM",
       "location": "FIEM Campus",
       "description": "Inter-college cricket tournament featuring exciting matches and competitive spirit.",
@@ -24,7 +24,7 @@
     {
       "id": "football",
       "title": "FUTSAL CHAMPIONSHIP",
-      "date": "April 8-10, 2025",
+      "date": "Jan 8-10, 2025",
       "time": "9:00 AM - 9:00 PM",
       "location": "FIEM Campus",
       "description": "Annual football championship with intense matches and skilled players.",
@@ -45,7 +45,7 @@
     {
       "id": "handball",
       "title": "Women's Handball Tournament",
-      "date": "April 8-10, 2025",
+      "date": "Jan 8-10, 2025",
       "time": "9:00 AM - 7:00 PM",
       "location": "FIEM Campus",
       "description": "Fast-paced handball tournament featuring skilled teams and exciting matches.",
@@ -66,7 +66,7 @@
     {
       "id": "badminton",
       "title": "Shuttle Cup",
-      "date": "April 7-8, 2026",
+      "date": "Jan 7-8, 2026",
       "time": "9:00 AM - 5:00 PM",
       "location": "FIEM Campus",
       "description": "Individual and doubles badminton tournament with various categories.",
@@ -82,6 +82,27 @@
         "open": true,
         "deadline": "April 6, 2025",
         "formLink": "https://forms.gle/erRbVAeFuAVuELfd8"
+      }
+    },
+    {
+      "id": "chess-open",
+      "title": "Chess Tournament (Open)",
+      "date": "Jan 10, 2025",
+      "time": "10:00 AM - 6:00 PM",
+      "location": "FIEM Campus",
+      "description": "Open chess tournament for all age groups.",
+      "fullDescription": "The open chess tournament welcomes players of all age groups and skill levels. The tournament features a Swiss system format with multiple rounds. Special categories for different rating groups and age categories are included.",
+      "image": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=800&q=80",
+      "teams": ["Individual"],
+      "featured": true,
+      "category": "Sports",
+      "capacity": "250 players",
+      "organizer": "Sports Department",
+      "price": "₹650 per player",
+      "registration": {
+        "open": true,
+        "deadline": "April 6, 2025",
+        "formLink": "https://forms.gle/Rf27Zgb2xCAodz7M6"
       }
     },
     {
@@ -122,27 +143,6 @@
       "price": "₹550 per player",
       "registration": {
         "open": false,
-        "deadline": "April 6, 2025",
-        "formLink": "https://forms.gle/Rf27Zgb2xCAodz7M6"
-      }
-    },
-    {
-      "id": "chess-open",
-      "title": "Chess Tournament (Open)",
-      "date": "April 10, 2025",
-      "time": "10:00 AM - 6:00 PM",
-      "location": "FIEM Campus",
-      "description": "Open chess tournament for all age groups.",
-      "fullDescription": "The open chess tournament welcomes players of all age groups and skill levels. The tournament features a Swiss system format with multiple rounds. Special categories for different rating groups and age categories are included.",
-      "image": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=800&q=80",
-      "teams": ["Individual"],
-      "featured": false,
-      "category": "Sports",
-      "capacity": "250 players",
-      "organizer": "Sports Department",
-      "price": "₹650 per player",
-      "registration": {
-        "open": true,
         "deadline": "April 6, 2025",
         "formLink": "https://forms.gle/Rf27Zgb2xCAodz7M6"
       }
