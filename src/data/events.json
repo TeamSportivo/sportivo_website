@@ -14,7 +14,7 @@
       "category": "Sports",
       "capacity": "30 teams",
       "organizer": "Cricket Department",
-      "price": "₹1200 per team",
+      "price": "₹650 per team",
       "registration": {
         "open": true,
         "deadline": "April 6, 2025",
@@ -35,7 +35,7 @@
       "category": "Sports",
       "capacity": "40 teams",
       "organizer": "Sports Department",
-      "price": "₹1800 per team",
+      "price": "₹600 per team",
       "registration": {
         "open": true,
         "deadline": "April 6, 2025",
@@ -56,7 +56,7 @@
       "category": "Sports",
       "capacity": "12 teams",
       "organizer": "Sports Department",
-      "price": "₹300 per team",
+      "price": "₹150 per team",
       "registration": {
         "open": true,
         "deadline": "April 7, 2025",
@@ -77,7 +77,7 @@
       "category": "Sports",
       "capacity": "250 players",
       "organizer": "Sports Department",
-      "price": "₹100 [Singles] - ₹200 [Doubles]",
+      "price": "₹60 [Singles] - ₹120 [Doubles] - ₹200[Team Event]",
       "registration": {
         "open": true,
         "deadline": "April 6, 2025",
@@ -86,8 +86,8 @@
     },
     {
       "id": "chess-open",
-      "title": "Chess Tournament (Open)",
-      "date": "Jan 10, 2026",
+      "title": "Chess Grandmaster Arena",
+      "date": "Jan 16, 2026",
       "time": "10:00 AM - 6:00 PM",
       "location": "FIEM Campus",
       "description": "Open chess tournament for all age groups.",
@@ -98,7 +98,7 @@
       "category": "Sports",
       "capacity": "250 players",
       "organizer": "Sports Department",
-      "price": "₹650 per player",
+      "price": "₹100 per player",
       "registration": {
         "open": true,
         "deadline": "April 6, 2025",
