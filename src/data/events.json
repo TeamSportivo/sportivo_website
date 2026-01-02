@@ -2,9 +2,9 @@
   "events": [
     {
       "id": "cricket",
-      "title": "SHORT HAND CRICKET TOURNAMENT",
-      "date": "April 8-10, 2025",
-      "time": "9:00 AM - 8:00 PM",
+      "title": "CRICKET TOURNAMENT",
+      "date": "April 10-11, 2026",
+      "time": "9:00 AM - 5:00 PM",
       "location": "FIEM Campus",
       "description": "Inter-college cricket tournament featuring exciting matches and competitive spirit.",
       "fullDescription": "Join us for an exhilarating cricket tournament that brings together the best teams from across colleges. The tournament features Short Hand Cricket format matches with knockout stages leading to an exciting final. Teams will compete for the championship trophy and individual awards for outstanding performances.",
@@ -18,7 +18,7 @@
       "registration": {
         "open": true,
         "deadline": "April 6, 2025",
-        "formLink": "https://forms.gle/9Wwc6kdWYXWtzL1E6"
+        "formLink": "https://forms.gle/vYg61vWRgaDc2Ht46"
       }
     },
     {
@@ -39,7 +39,7 @@
       "registration": {
         "open": true,
         "deadline": "April 6, 2025",
-        "formLink": "https://forms.gle/eQpHQDi4W2sckK5M7"
+        "formLink": "https://forms.gle/WHvETxxTSJ9q5FHt5"
       }
     },
     {
@@ -52,7 +52,7 @@
       "fullDescription": "VIBGYOR WOMEN HANDBALL 2025\n\nRules:\n1. Teams consist of 5 + 2\n2. The Game is played in two 10-minute halves with a break in between.\n3. Players can move the ball by passing, dribbling, or hitting it with any part of the body above the knee, but not with their feet (except for the goalkeeper within the goal area).\n4. Game coordinators have right to change the rules",
       "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80",
       "teams": ["Team Alpha", "Team Beta", "Team Gamma"],
-      "featured": false,
+      "featured": true,
       "category": "Sports",
       "capacity": "12 teams",
       "organizer": "Sports Department",
@@ -60,14 +60,14 @@
       "registration": {
         "open": true,
         "deadline": "April 7, 2025",
-        "formLink": "https://forms.gle/cqaSy6YxDZmhBrTf9"
+        "formLink": "https://forms.gle/cR6xVbktBqwpECPi6"
       }
     },
     {
       "id": "badminton",
-      "title": "Badminton Championship",
-      "date": "April 8-10, 2025",
-      "time": "9:00 AM - 7:00 PM",
+      "title": "Shuttle Cup",
+      "date": "April 7-8, 2026",
+      "time": "9:00 AM - 5:00 PM",
       "location": "FIEM Campus",
       "description": "Individual and doubles badminton tournament with various categories.",
       "fullDescription": "Rules:\n\nMatch Format: Knockout\nQualifiers: Best of 15 points (1 set)\nCoordinator's Decision: Final\nLate Reporting: Walkover awarded to opponent\nRule Modifications: Coordinator reserves the right to modify rules as needed.\nTeam Eligibility: All college teams are welcome. Player authenticity will be verified with college IDs.\nIf a player wants to participate in both singles and doubles, they have to fill out the Google form twice.\nFor registration in doubles, either player can fill out the form on behalf of both participants.",
@@ -81,7 +81,7 @@
       "registration": {
         "open": true,
         "deadline": "April 6, 2025",
-        "formLink": "https://forms.gle/MYYspxbSPwZS6HBr5"
+        "formLink": "https://forms.gle/erRbVAeFuAVuELfd8"
       }
     },
     {
@@ -100,7 +100,7 @@
       "organizer": "Sports Department",
       "price": "₹150 [Singles] - ₹300 [Doubles]",
       "registration": {
-        "open": true,
+        "open": false,
         "deadline": "April 6, 2025",
         "formLink": "https://forms.gle/AnDDDxj4P2gsMLtY6"
       }
@@ -121,9 +121,9 @@
       "organizer": "Sports Department",
       "price": "₹550 per player",
       "registration": {
-        "open": true,
+        "open": false,
         "deadline": "April 6, 2025",
-        "formLink": "https://forms.gle/RTJ5MEuRvTdzPzKS7"
+        "formLink": "https://forms.gle/Rf27Zgb2xCAodz7M6"
       }
     },
     {
@@ -144,7 +144,7 @@
       "registration": {
         "open": true,
         "deadline": "April 6, 2025",
-        "formLink": "https://forms.gle/pS2x3j38LkCoFHPs8"
+        "formLink": "https://forms.gle/Rf27Zgb2xCAodz7M6"
       }
     },
     {
@@ -157,16 +157,16 @@
       "fullDescription": "Hit the Wicket, Goal in the Hole, Carrom, Dart, Sequence and many more",
       "image": "https://images.unsplash.com/photo-1501612780327-6b9c9b3f0b0f?auto=format&fit=crop&w=800&q=80",
       "teams": ["Sports Team"],
-      "featured": true,
+      "featured": false,
       "category": "Sports",
       "capacity": "400 participants",
       "organizer": "Sports Department",
       "price": "will be updated soon",
       "registration": {
-        "open": true,
+        "open": false,
         "deadline": "On Spot Registration",
         "formLink": "https://forms.gle/YDDjChnW5sqoFVg48"
       }
     }
   ]
-} 
+}
