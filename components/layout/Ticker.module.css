@@ -1,0 +1,26 @@
+.ticker {
+  background: var(--gradient-accent);
+  padding: 10px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+}
+.track {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker 30s linear infinite;
+  width: max-content;
+}
+.ticker:hover .track { animation-play-state: paused; }
+.item {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: white;
+  padding: 0 24px;
+}
+.dot {
+  color: rgba(255,255,255,0.5);
+  padding: 0 8px;
+}

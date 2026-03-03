@@ -1,0 +1,40 @@
+.sponsors {
+  padding: 80px 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+.heading {
+  text-align: center;
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 48px;
+}
+.track {
+  display: flex;
+  gap: 40px;
+  white-space: nowrap;
+  animation: ticker 20s linear infinite;
+  width: max-content;
+}
+.logo {
+  width: 160px; height: 60px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: border-color 0.3s;
+}
+.logo:hover { border-color: var(--color-accent); }
