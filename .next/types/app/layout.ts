@@ -1,4 +1,4 @@
-// File: D:\Downloads\sportivo (1)\home\claude\sportivo\app\layout.js
+// File: D:\Coding\Sportivo\sportivo_website\app\layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -1,16 +1,21 @@
-"use client"
-import { motion } from "framer-motion"
-import SectionHeading from "@/components/ui/SectionHeading"
-import StatCounter from "@/components/ui/StatCounter"
-import { slideInLeft, slideInRight, staggerContainer, viewportConfig } from "@/lib/animations"
-import styles from "./About.module.css"
+"use client";
+import { motion } from "framer-motion";
+import SectionHeading from "@/components/ui/SectionHeading";
+import StatCounter from "@/components/ui/StatCounter";
+import {
+  slideInLeft,
+  slideInRight,
+  staggerContainer,
+  viewportConfig,
+} from "@/lib/animations";
+import styles from "./About.module.css";
 
 const stats = [
   { value: 10, suffix: "", label: "Events This Season" },
   { value: 500, suffix: "+", label: "Registered Participants" },
   { value: 9, suffix: "", label: "Sports Disciplines" },
   { value: 80, suffix: "+", label: "Club Members" },
-]
+];
 
 export default function About() {
   return (
@@ -28,10 +33,14 @@ export default function About() {
             title="Fueling the Competitive Spirit"
           />
           <p>
-            Sportivo isn't just a club — it's a culture. Born from the belief that every student-athlete deserves a stage, we orchestrate FIEM's most electrifying sporting events.
+            Sportivo isn&apos;t just a club — it&apos;s a culture. Born from the
+            belief that every student-athlete deserves a stage, we orchestrate
+            FIEM&apos;s most electrifying sporting events.
           </p>
           <p>
-            We train champions, cultivate leadership, and build a community where competition meets camaraderie. From the cricket crease to the chess board, every discipline finds its arena here.
+            We train champions, cultivate leadership, and build a community
+            where competition meets camaraderie. From the cricket crease to the
+            chess board, every discipline finds its arena here.
           </p>
         </motion.div>
         <motion.div
@@ -49,5 +58,5 @@ export default function About() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
