@@ -40,9 +40,9 @@ export default function Hero() {
           </span>
         </h1>
         <p className={styles.sub}>
-          FIEM's most competitive, most electric sports collective. We don't
-          just host events — we build champions, forge rivalries, and create
-          legends.
+          FIEM&apos;s most competitive, most electric sports collective. We
+          don&apos;t just host events — we build champions, forge rivalries, and
+          create legends.
         </p>
         <p className={styles.institute}>
           Future Institute of Engineering and Management
