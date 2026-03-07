@@ -102,7 +102,7 @@ export const events = [
     category: "Strength Sport",
     icon: "arm-wrestling",
     emoji: "💪",
-    dates: "TBA",
+    dates: "3rd April 2026",
     description:
       "Pure strength. Pure grit. Step to the table and prove who's the strongest at FIEM.",
     formLink: "https://forms.gle/dE5bZ93an5pDT9t58",
@@ -114,7 +114,7 @@ export const events = [
     category: "Special Event",
     icon: "flash",
     emoji: "⚡",
-    dates: "TBA — Stay Tuned",
+    dates: "1st – 5th April 2026",
     description:
       "Mystery. Excitement. Surprise. Sportivo's Flash Event drops without warning. Open to all — no prep needed.",
     formLink: "https://forms.gle/PcLUhKiKKFrEKVpv6",
