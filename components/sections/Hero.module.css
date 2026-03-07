@@ -13,9 +13,16 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px) scale(1); }
-  33%       { transform: translateY(-28px) scale(1.04); }
-  66%       { transform: translateY(-14px) scale(0.97); }
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  33% {
+    transform: translateY(-28px) scale(1.04);
+  }
+  66% {
+    transform: translateY(-14px) scale(0.97);
+  }
 }
 
 .orb {
@@ -27,29 +34,35 @@
   will-change: transform;
 }
 .orb1 {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, #FF4500 0%, transparent 70%);
-  top: -100px; left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #ff4500 0%, transparent 70%);
+  top: -100px;
+  left: -100px;
   animation-delay: 0s;
 }
 .orb2 {
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, #FF8C00 0%, transparent 70%);
-  bottom: -80px; right: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #ff8c00 0%, transparent 70%);
+  bottom: -80px;
+  right: 10%;
   animation-delay: -3s;
 }
 .orb3 {
-  width: 250px; height: 250px;
-  background: radial-gradient(circle, #FF4500 0%, transparent 70%);
-  top: 40%; right: 20%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #ff4500 0%, transparent 70%);
+  top: 40%;
+  right: 20%;
   animation-delay: -5s;
 }
 .grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 .content {
@@ -75,7 +88,8 @@
 }
 .eyebrow::before {
   content: "";
-  width: 32px; height: 2px;
+  width: 32px;
+  height: 2px;
   background: var(--gradient-accent);
 }
 .headline {
@@ -98,21 +112,45 @@
   transform: translateY(100%);
   animation: slideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-.wordInner.accent { color: var(--color-accent); }
-.wordInner.w1 { animation-delay: 0.3s; }
-.wordInner.w2 { animation-delay: 0.45s; }
-.wordInner.w3 { animation-delay: 0.6s; }
-.wordInner.w4 { animation-delay: 0.75s; }
+.wordInner.accent {
+  color: var(--color-accent);
+}
+.wordInner.w1 {
+  animation-delay: 0.3s;
+}
+.wordInner.w2 {
+  animation-delay: 0.45s;
+}
+.wordInner.w3 {
+  animation-delay: 0.6s;
+}
+.wordInner.w4 {
+  animation-delay: 0.75s;
+}
 @keyframes slideUp {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes bounce-chevron {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
 .sub {
   font-size: 1.1rem;
@@ -156,7 +194,7 @@
 }
 .btnPrimary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(255,69,0,0.5);
+  box-shadow: 0 12px 32px rgba(255, 69, 0, 0.5);
 }
 .btnSecondary {
   background: transparent;
@@ -180,8 +218,11 @@
 .scrollIndicator {
   position: absolute;
   bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: max-content;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,4 +238,126 @@
 .scrollIndicator svg {
   animation: bounce-chevron 2s ease-in-out infinite;
   position: relative;
+}
+.countdownWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.countdownLabel {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.countdownGrid {
+  display: flex;
+  gap: 12px;
+}
+
+.countdownUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  min-width: 72px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.countdownUnit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+}
+
+.countdownUnit:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+.countdownNumber {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.countdownUnitLabel {
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.countdownLive {
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: white;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@media (max-width: 480px) {
+  .countdownUnit {
+    min-width: 60px;
+    padding: 12px 14px;
+  }
+  .countdownNumber {
+    font-size: 1.6rem;
+  }
+}
+.heroMain {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.heroText {
+  flex: 1;
+}
+
+.heroSide {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .heroMain {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .heroSide {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: clamp(2.8rem, 16vw, 4rem);
+  }
+
+  .sub {
+    font-size: 0.95rem;
+  }
 }

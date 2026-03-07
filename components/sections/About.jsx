@@ -12,7 +12,7 @@ import styles from "./About.module.css";
 
 const stats = [
   { value: 10, suffix: "", label: "Events This Season" },
-  { value: 500, suffix: "+", label: "Registered Participants" },
+  { value: 1000, suffix: "+", label: "Registered Participants" },
   { value: 9, suffix: "", label: "Sports Disciplines" },
   { value: 80, suffix: "+", label: "Club Members" },
 ];
