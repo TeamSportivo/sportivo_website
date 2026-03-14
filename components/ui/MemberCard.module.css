@@ -9,10 +9,11 @@
 .card:hover {
   border-color: var(--color-border-hover);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(255,69,0,0.12);
+  box-shadow: 0 12px 32px rgba(255, 69, 0, 0.12);
 }
 .photoWrap {
-  width: 80px; height: 80px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   margin: 0 auto 16px;
   overflow: hidden;
@@ -21,11 +22,13 @@
   position: relative;
 }
 .photo {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .initials {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +58,17 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-accent);
-  border: 1px solid rgba(255,69,0,0.3);
+  border: 1px solid rgba(255, 69, 0, 0.3);
   padding: 3px 10px;
   border-radius: 20px;
+}
+
+.mentorRole {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
