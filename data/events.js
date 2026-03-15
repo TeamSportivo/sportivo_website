@@ -32,7 +32,7 @@ export const events = [
     dates: "1st – 2nd April 2026",
     description:
       "Lightning reflexes, razor-sharp focus. The table is set — are you ready to own every rally?",
-    formLink: "https://forms.gle/scgHSy36qGCV3o6M7",
+    formLink: "https://forms.gle/v9f6JvTwN2TCZZP68",
     color: "#00A8FF",
   },
   {
