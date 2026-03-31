@@ -27,7 +27,7 @@ export default async function Home() {
         <Events />
         <Team members={members} />
         {/* <Gallery /> */}
-        {/* <Sponsors /> */}
+        <Sponsors />
         <FAQ />
       </main>
       <Footer />
