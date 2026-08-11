@@ -151,6 +151,11 @@
     display: flex;
   }
 }
+@media (min-width: 769px) {
+  .drawer {
+    display: none !important;
+  }
+}
 
 .logoWrap {
   display: flex;
