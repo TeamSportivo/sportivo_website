@@ -81,17 +81,35 @@
   color: var(--color-text-secondary);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--color-border);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-              color 0.3s ease, 
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              color 0.3s ease,
               border-color 0.3s ease,
-              background 0.3s ease;
+              background 0.3s ease,
+              opacity 0.3s ease;
   cursor: pointer;
+  padding: 0;
+  font: inherit;
 }
 .socialLink:hover {
   transform: rotate(360deg);
   color: var(--color-accent);
   border-color: var(--color-accent);
   background: rgba(255, 69, 0, 0.05);
+}
+.socialMissing {
+  opacity: 0.45;
+}
+.socialMissing:hover {
+  opacity: 0.85;
+}
+.socialNotice {
+  margin-top: 10px;
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  line-height: 1.35;
+  min-height: 1.35em;
 }
 
 .mentorRole {
