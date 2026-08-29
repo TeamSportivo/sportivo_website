@@ -7,6 +7,9 @@ const sponsors = [
   { name: "Decathlon", file: "decathlon.png" },
   { name: "Red FM 93.5", file: "redfm.png" },
   { name: "Edugraph", file: "edugraph.png" },
+  { name: "Red Bull", file: "Redbull.png" },
+  { name: "Chai Sutta Chronicles", file: "ChaiSutta.jpeg" },
+  { name: "You Are Awesome", file: "YAA.png" },
 ];
 
 export default function Sponsors() {
@@ -79,7 +82,7 @@ export default function Sponsors() {
           </div>
           <div className={styles.set}>
             {sponsors.map((s, i) => (
-              <div key={i} className={styles.logo}>
+              <div key={`b-${i}`} className={styles.logo}>
                 <img
                   src={`/sponsors/${s.file}`}
                   alt={s.name}
@@ -90,7 +93,7 @@ export default function Sponsors() {
           </div>
           <div className={styles.set}>
             {sponsors.map((s, i) => (
-              <div key={i} className={styles.logo}>
+              <div key={`c-${i}`} className={styles.logo}>
                 <img
                   src={`/sponsors/${s.file}`}
                   alt={s.name}

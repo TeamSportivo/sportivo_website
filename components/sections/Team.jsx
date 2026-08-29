@@ -3,6 +3,7 @@ import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import SectionHeading from "@/components/ui/SectionHeading"
 import MemberCard from "@/components/ui/MemberCard"
+import DinoGame from "@/components/ui/DinoGame"
 import styles from "./Team.module.css"
 
 const tabs = [
@@ -45,7 +46,9 @@ export default function Team({ members }) {
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.3 }}
           >
-            {current.length === 0 ? (
+            {active === "volunteer" ? (
+              <DinoGame />
+            ) : current.length === 0 ? (
               <div className={styles.empty}>No members found in this category yet.</div>
             ) : (
               current.map((member, i) => (

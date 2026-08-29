@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+memory.md
+rules.md
+generate-rules.js
+
+# Next.js build output
+.next/
