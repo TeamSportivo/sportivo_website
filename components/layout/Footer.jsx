@@ -48,16 +48,16 @@ export default function Footer() {
           <h4 className={styles.subheading}>Reach Out Directly</h4>
           <ul>
             <li className={styles.contactPerson}>
-              <span className={styles.contactName}>Rohit Yadav</span>
-              <a href="tel:+919830116661" className={styles.contactPhone}>+91 98301 16661</a>
+              <span className={styles.contactName}>Suhit Ghosh</span>
+              <a href="tel:+917044969644" className={styles.contactPhone}>+91 70449 69644</a>
             </li>
             <li className={styles.contactPerson}>
-              <span className={styles.contactName}>Aman Agastya</span>
-              <a href="tel:+919693553439" className={styles.contactPhone}>+91 96935 53439</a>
+              <span className={styles.contactName}>Rupankar Dey</span>
+              <a href="tel:+919433760753" className={styles.contactPhone}>+91 94337 60753</a>
             </li>
             <li className={styles.contactPerson}>
-              <span className={styles.contactName}>Chhavinav Verma</span>
-              <a href="tel:+917479703520" className={styles.contactPhone}>+91 74797 03520</a>
+              <span className={styles.contactName}>Ankush Samanta</span>
+              <a href="tel:+919091808088" className={styles.contactPhone}>+91 90918 08088</a>
             </li>
           </ul>
         </div>
