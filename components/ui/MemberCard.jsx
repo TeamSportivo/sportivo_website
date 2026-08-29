@@ -33,16 +33,49 @@ const LinkedInIcon = () => (
   </svg>
 );
 
+function driveFileIdFromUrl(url) {
+  if (!url) return null;
+  const match =
+    url.match(/\/d\/([a-zA-Z0-9_-]+)/) ||
+    url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  return match ? match[1] : null;
+}
+
+function photoFallbacks(photoUrl) {
+  const id = driveFileIdFromUrl(photoUrl);
+  if (!id) return photoUrl ? [photoUrl] : [];
+  return [
+    `https://lh3.googleusercontent.com/d/${id}=s400`,
+    `https://drive.google.com/thumbnail?id=${id}&sz=w400`,
+    `https://drive.google.com/uc?export=view&id=${id}`,
+  ];
+}
+
 export default function MemberCard({ member, index }) {
+  const candidates = photoFallbacks(member.photo);
+  const [photoIdx, setPhotoIdx] = useState(0);
   const [imgError, setImgError] = useState(false);
   const [notice, setNotice] = useState("");
   const noticeTimer = useRef(null);
+
+  useEffect(() => {
+    setPhotoIdx(0);
+    setImgError(false);
+  }, [member.photo]);
 
   useEffect(() => {
     return () => {
       if (noticeTimer.current) clearTimeout(noticeTimer.current);
     };
   }, []);
+
+  const handleImgError = () => {
+    if (photoIdx + 1 < candidates.length) {
+      setPhotoIdx((i) => i + 1);
+    } else {
+      setImgError(true);
+    }
+  };
 
   const showMissing = (platform) => {
     setNotice(`${member.name} doesn't have ${platform}`);
@@ -91,14 +124,14 @@ export default function MemberCard({ member, index }) {
       transition={{ delay: (index % 4) * 0.08 }}
     >
       <div className={styles.photoWrap}>
-        {member.photo && !imgError ? (
+        {candidates.length > 0 && !imgError ? (
           <img
-            src={member.photo}
+            src={candidates[photoIdx]}
             alt={member.name}
             className={styles.photo}
             referrerPolicy="no-referrer"
             loading="lazy"
-            onError={() => setImgError(true)}
+            onError={handleImgError}
           />
         ) : (
           <div className={styles.initials}>{member.initials}</div>
