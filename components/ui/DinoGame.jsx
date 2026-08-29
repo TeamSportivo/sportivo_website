@@ -2,6 +2,16 @@
 import React, { useRef, useEffect, useState } from "react";
 import styles from "./DinoGame.module.css";
 
+// Constants
+const CANVAS_WIDTH = 600;
+const CANVAS_HEIGHT = 150;
+const GROUND_Y = 130;
+const DINO_X = 50;
+const DINO_WIDTH = 22;
+const DINO_HEIGHT = 26;
+const GRAVITY = 0.5;
+const JUMP_FORCE = -8.5;
+
 export default function DinoGame() {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
@@ -12,7 +22,7 @@ export default function DinoGame() {
   // References for game loop state (to avoid re-running effect on state changes)
   const stateRef = useRef({
     gameState: "start",
-    dinoY: 0,
+    dinoY: GROUND_Y - DINO_HEIGHT,
     dinoVelocity: 0,
     obstacles: [],
     groundOffset: 0,
@@ -27,6 +37,43 @@ export default function DinoGame() {
     stateRef.current.gameState = gameState;
   }, [gameState]);
 
+  // Reset game variables
+  const resetGame = () => {
+    stateRef.current.dinoY = GROUND_Y - DINO_HEIGHT;
+    stateRef.current.dinoVelocity = 0;
+    stateRef.current.obstacles = [];
+    stateRef.current.groundOffset = 0;
+    stateRef.current.score = 0;
+    stateRef.current.speed = 5;
+    stateRef.current.frameCount = 0;
+    stateRef.current.isJumping = false;
+    setScore(0);
+  };
+
+  const handleJump = () => {
+    const state = stateRef.current;
+    if (state.gameState === "start") {
+      resetGame();
+      state.gameState = "playing";
+      setGameState("playing");
+    } else if (state.gameState === "gameover") {
+      resetGame();
+      state.gameState = "playing";
+      setGameState("playing");
+    } else if (state.gameState === "playing" && !state.isJumping) {
+      state.dinoVelocity = JUMP_FORCE;
+      state.isJumping = true;
+    }
+  };
+
+  // Keyboard listener
+  const onKeyDown = (e) => {
+    if (e.code === "Space" || e.code === "ArrowUp") {
+      e.preventDefault();
+      handleJump();
+    }
+  };
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -34,56 +81,9 @@ export default function DinoGame() {
 
     let animationFrameId;
 
-    // Constants
-    const CANVAS_WIDTH = 600;
-    const CANVAS_HEIGHT = 150;
-    const GROUND_Y = 130;
-    const DINO_X = 50;
-    const DINO_WIDTH = 22;
-    const DINO_HEIGHT = 26;
-    const GRAVITY = 0.5;
-    const JUMP_FORCE = -8.5;
-
     // Set canvas dimensions
     canvas.width = CANVAS_WIDTH;
     canvas.height = CANVAS_HEIGHT;
-
-    // Reset game variables
-    const resetGame = () => {
-      stateRef.current.dinoY = GROUND_Y - DINO_HEIGHT;
-      stateRef.current.dinoVelocity = 0;
-      stateRef.current.obstacles = [];
-      stateRef.current.groundOffset = 0;
-      stateRef.current.score = 0;
-      stateRef.current.speed = 5;
-      stateRef.current.frameCount = 0;
-      stateRef.current.isJumping = false;
-      setScore(0);
-    };
-
-    const handleJump = () => {
-      const state = stateRef.current;
-      if (state.gameState === "start") {
-        resetGame();
-        setGameState("playing");
-      } else if (state.gameState === "gameover") {
-        resetGame();
-        setGameState("playing");
-      } else if (state.gameState === "playing" && !state.isJumping) {
-        state.dinoVelocity = JUMP_FORCE;
-        state.isJumping = true;
-      }
-    };
-
-    // Keyboard listener
-    const onKeyDown = (e) => {
-      if (e.code === "Space" || e.code === "ArrowUp") {
-        e.preventDefault();
-        handleJump();
-      }
-    };
-
-    window.addEventListener("keydown", onKeyDown);
 
     // Game loop
     const loop = () => {
@@ -202,6 +202,7 @@ export default function DinoGame() {
             state.dinoY + DINO_HEIGHT > obs.y
           ) {
             // Collision!
+            state.gameState = "gameover";
             setGameState("gameover");
             if (state.score > state.highScore) {
               state.highScore = state.score;
@@ -252,24 +253,18 @@ export default function DinoGame() {
     loop();
 
     return () => {
-      window.removeEventListener("keydown", onKeyDown);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [gameState]);
+  }, []);
 
   return (
-    <div className={styles.gameContainer} ref={containerRef} onClick={() => {
-      // Trigger jump or start on canvas click
-      if (gameState === "start" || gameState === "gameover") {
-        setGameState("playing");
-      } else if (gameState === "playing") {
-        const state = stateRef.current;
-        if (!state.isJumping) {
-          state.dinoVelocity = -8.5;
-          state.isJumping = true;
-        }
-      }
-    }}>
+    <div
+      className={styles.gameContainer}
+      ref={containerRef}
+      tabIndex={0}
+      onKeyDown={onKeyDown}
+      onClick={handleJump}
+    >
       <div className={styles.header}>
         <div className={styles.chromeTitle}>
           <span className={styles.icon}>🦖</span>
@@ -290,7 +285,7 @@ export default function DinoGame() {
         <div className={styles.suggestions}>
           <p>Try:</p>
           <ul>
-            <li>Checking Sportivo's official Instagram handle for announcement alerts</li>
+            <li>Checking Sportivo&apos;s official Instagram handle for announcement alerts</li>
             <li>Preparing your lists of management, technical, or athletic skills</li>
             <li>Reconnecting once portals go live next week</li>
           </ul>
