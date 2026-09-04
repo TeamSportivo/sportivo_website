@@ -39,16 +39,8 @@ function Countdown() {
 
   if (!timeLeft) return null;
 
-  if (timeLeft.started) {
-    return (
-      <div className={styles.countdownWrap}>
-        <span className={styles.countdownLabel}>VIBGYOR IS LIVE</span>
-        <span className={styles.countdownLive}>
-          ⚡ Events are happening now!
-        </span>
-      </div>
-    );
-  }
+  // Event date has passed — hide the live banner
+  if (timeLeft.started) return null;
 
   const units = [
     { label: "Days", value: timeLeft.days },
